@@ -1,6 +1,7 @@
 ---
 
 title: Awesome Coding Tutorials
+permalink: false
 
 ---
 

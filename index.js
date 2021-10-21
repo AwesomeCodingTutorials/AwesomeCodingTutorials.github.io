@@ -7,12 +7,12 @@ const permalinks = require('metalsmith-permalinks')
 Metalsmith(__dirname)
     .source('./src')
     .use(partials())
+    .use(markdown())
     .use(
         permalinks({
             pattern: ':title'
         })
     )
-    .use(markdown())
     .use(
         layouts({
             default: 'master.hbs',

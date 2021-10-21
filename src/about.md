@@ -1,6 +1,6 @@
 ---
 
-title: Awesome Coding Tutorials - About me
+title: About
 
 ---
 
