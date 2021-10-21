@@ -3,11 +3,16 @@ const markdown = require('metalsmith-markdown')
 const layouts = require('metalsmith-layouts')
 const partials = require('metalsmith-discover-partials')
 const permalinks = require('metalsmith-permalinks')
+const assets = require('metalsmith-assets')
 
 Metalsmith(__dirname)
     .source('./src')
     .use(partials())
     .use(markdown())
+    .use(assets({
+        source: './assets',
+        destination: './assets'
+    }))
     .use(
         permalinks({
             pattern: ':title'

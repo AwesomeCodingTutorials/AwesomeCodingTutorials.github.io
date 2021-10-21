@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  
+  		<meta charset="UTF-8">
+  		<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+  		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  		<meta name="Description" content="">
+  		<meta name="Author" content="Christian 'Herr Bär' Göbert">
+  		<meta name="Keywords" content="Awesome Coding Tutorials ESP32 Arduino RaspberryPI Pi Robotic Robot Bot Microservice Cloud Programming Development"/>
+  
+  		<title>  </title>
+  
+  		<link rel="icon" href="../../assets/img/brand/favicon.png" type="image/x-icon"/>
+  
+  		<link href="../../assets/css/icons.css" rel="stylesheet">
+  
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  
+  		<link href="../../assets/plugins/mscrollbar/jquery.mCustomScrollbar.css" rel="stylesheet"/>
+  
+  		<link href="../../assets/plugins/sidebar/sidebar.css" rel="stylesheet">
+  
+  		<link href="../../assets/plugins/morris.js/morris.css" rel="stylesheet">
+  
+  		<link href="../../assets/css/style.css" rel="stylesheet">
+  		<link href="../../assets/css/boxed.css" rel="stylesheet">
+  		<link href="../../assets/css/dark-boxed.css" rel="stylesheet">
+  
+  		<link href="../../assets/css/style-dark.css" rel="stylesheet">
+  		<link href="../../assets/css/skin-modes.css" rel="stylesheet" />
+  
+  	</head>
+	<body class="main-body">
+
+		<!-- Loader -->
+		<div id="global-loader">
+			<img src="assets/img/loader.svg" class="loader-img" alt="Loader">
+		</div>
+		<!-- /Loader -->
+
+		<!-- Page -->
+		<div class="page">
+
+      			<!-- main-header opened -->
+      			<div class="main-header nav nav-item hor-header">
+      				<div class="container">
+      					<div class="main-header-left ">
+      						<a class="animated-arrow hor-toggle horizontal-navtoggle"><span></span></a><!-- sidebar-toggle-->
+      						<a class="header-brand" href="index.html">
+      							<img src="../../assets/img/brand/logo-white.png" class="desktop-dark">
+      							<img src="../../assets/img/brand/logo.png" class="desktop-logo">
+      							<img src="../../assets/img/brand/favicon.png" class="desktop-logo-1">
+      							<img src="../../assets/img/brand/favicon-white.png" class="desktop-logo-dark">
+      						</a>
+      						<div class="main-header-center  ms-4">
+      							<input class="form-control" placeholder="Search for anything..." type="search"><button class="btn"><i class="fe fe-search"></i></button>
+      						</div>
+      					</div><!-- search -->
+      					<div class="main-header-right">
+      						<ul class="nav nav-item  navbar-nav-right ms-auto">
+      							<li class="nav">
+      									<div class="dropdown  nav-itemd-none d-md-flex">
+      										<a href="#" class="d-flex  nav-item country-flag1" data-bs-toggle="dropdown" aria-expanded="false">
+      											<span class="avatar country-Flag me-0 align-self-center bg-transparent"><img src="../../assets/img/flags/us_flag.jpg" alt="img"></span>
+      											<div class="my-auto">
+      												<strong class="me-2 ms-2 my-auto">English</strong>
+      											</div>
+      										</a>
+      										<div class="dropdown-menu dropdown-menu-left dropdown-menu-arrow" x-placement="bottom-end">
+      											<a href="#" class="dropdown-item d-flex ">
+      												<span class="avatar  me-3 align-self-center bg-transparent"><img src="../../assets/img/flags/french_flag.jpg" alt="img"></span>
+      												<div class="d-flex">
+      													<span class="mt-2">French</span>
+      												</div>
+      											</a>
+      											<a href="#" class="dropdown-item d-flex">
+      												<span class="avatar  me-3 align-self-center bg-transparent"><img src="../../assets/img/flags/germany_flag.jpg" alt="img"></span>
+      												<div class="d-flex">
+      													<span class="mt-2">Germany</span>
+      												</div>
+      											</a>
+      											<a href="#" class="dropdown-item d-flex">
+      												<span class="avatar me-3 align-self-center bg-transparent"><img src="../../assets/img/flags/italy_flag.jpg" alt="img"></span>
+      												<div class="d-flex">
+      													<span class="mt-2">Italy</span>
+      												</div>
+      											</a>
+      											<a href="#" class="dropdown-item d-flex">
+      												<span class="avatar me-3 align-self-center bg-transparent"><img src="../../assets/img/flags/russia_flag.jpg" alt="img"></span>
+      												<div class="d-flex">
+      													<span class="mt-2">Russia</span>
+      												</div>
+      											</a>
+      											<a href="#" class="dropdown-item d-flex">
+      												<span class="avatar  me-3 align-self-center bg-transparent"><img src="../../assets/img/flags/spain_flag.jpg" alt="img"></span>
+      												<div class="d-flex">
+      													<span class="mt-2">spain</span>
+      												</div>
+      											</a>
+      										</div>
+      									</div>
+      							</li>
+      							<li class="nav-link" id="bs-example-navbar-collapse-1">
+      								<form class="navbar-form" role="search">
+      									<div class="input-group">
+      										<input type="text" class="form-control" placeholder="Search">
+      										<span class="input-group-btn">
+      											<button type="reset" class="btn btn-default">
+      												<i class="fas fa-times"></i>
+      											</button>
+      											<button type="submit" class="btn btn-default nav-link resp-btn">
+      												<svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      											</button>
+      										</span>
+      									</div>
+      								</form>
+      							</li>
+      							<li class="dropdown nav-item main-header-message ">
+      								<a class="new nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><span class=" pulse-danger"></span></a>
+      								<div class="dropdown-menu">
+      									<div class="menu-header-content bg-primary text-start">
+      										<div class="d-flex">
+      											<h6 class="dropdown-title mb-1 tx-15 text-white fw-semibold">Messages</h6>
+      											<span class="badge rounded-pill bg-warning ms-auto my-auto float-end">Mark All Read</span>
+      										</div>
+      										<p class="dropdown-title-text subtext mb-0 text-white op-6 pb-0 tx-12 ">You have 4 unread messages</p>
+      									</div>
+      									<div class="main-message-list chat-scroll">
+      										<a href="#" class="p-3 d-flex border-bottom">
+      											<div class="  drop-img  cover-image  " data-bs-image-src="../../assets/img/faces/3.jpg">
+      												<span class="avatar-status bg-teal"></span>
+      											</div>
+      											<div class="wd-90p">
+      												<div class="d-flex">
+      													<h5 class="mb-1 name">Petey Cruiser</h5>
+      												</div>
+      												<p class="mb-0 desc">I'm sorry but i'm not sure how to help you with that......</p>
+      												<p class="time mb-0 text-start float-start ms-2 mt-2">Mar 15 3:55 PM</p>
+      											</div>
+      										</a>
+      										<a href="#" class="p-3 d-flex border-bottom">
+      											<div class="drop-img cover-image" data-bs-image-src="../../assets/img/faces/2.jpg">
+      												<span class="avatar-status bg-teal"></span>
+      											</div>
+      											<div class="wd-90p">
+      												<div class="d-flex">
+      													<h5 class="mb-1 name">Jimmy Changa</h5>
+      												</div>
+      												<p class="mb-0 desc">All set ! Now, time to get to you now......</p>
+      												<p class="time mb-0 text-start float-start ms-2 mt-2">Mar 06 01:12 AM</p>
+      											</div>
+      										</a>
+      										<a href="#" class="p-3 d-flex border-bottom">
+      											<div class="drop-img cover-image" data-bs-image-src="../../assets/img/faces/9.jpg">
+      												<span class="avatar-status bg-teal"></span>
+      											</div>
+      											<div class="wd-90p">
+      												<div class="d-flex">
+      													<h5 class="mb-1 name">Graham Cracker</h5>
+      												</div>
+      												<p class="mb-0 desc">Are you ready to pickup your Delivery...</p>
+      												<p class="time mb-0 text-start float-start ms-2 mt-2">Feb 25 10:35 AM</p>
+      											</div>
+      										</a>
+      										<a href="#" class="p-3 d-flex border-bottom">
+      											<div class="drop-img cover-image" data-bs-image-src="../../assets/img/faces/12.jpg">
+      												<span class="avatar-status bg-teal"></span>
+      											</div>
+      											<div class="wd-90p">
+      												<div class="d-flex">
+      													<h5 class="mb-1 name">Donatella Nobatti</h5>
+      												</div>
+      												<p class="mb-0 desc">Here are some products ...</p>
+      												<p class="time mb-0 text-start float-start ms-2 mt-2">Feb 12 05:12 PM</p>
+      											</div>
+      										</a>
+      										<a href="#" class="p-3 d-flex border-bottom">
+      											<div class="drop-img cover-image" data-bs-image-src="../../assets/img/faces/5.jpg">
+      												<span class="avatar-status bg-teal"></span>
+      											</div>
+      											<div class="wd-90p">
+      												<div class="d-flex">
+      													<h5 class="mb-1 name">Anne Fibbiyon</h5>
+      												</div>
+      												<p class="mb-0 desc">I'm sorry but i'm not sure how...</p>
+      												<p class="time mb-0 text-start float-start ms-2 mt-2">Jan 29 03:16 PM</p>
+      											</div>
+      										</a>
+      									</div>
+      									<div class="text-center dropdown-footer">
+      										<a href="text-center">VIEW ALL</a>
+      									</div>
+      								</div>
+      							</li>
+      							<li class="dropdown nav-item main-header-notification">
+      								<a class="new nav-link" href="#">
+      								<svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg><span class=" pulse"></span></a>
+      								<div class="dropdown-menu">
+      									<div class="menu-header-content bg-primary text-start">
+      										<div class="d-flex">
+      											<h6 class="dropdown-title mb-1 tx-15 text-white fw-semibold">Notifications</h6>
+      											<span class="badge rounded-pill bg-warning ms-auto my-auto float-end">Mark All Read</span>
+      										</div>
+      										<p class="dropdown-title-text subtext mb-0 text-white op-6 pb-0 tx-12 ">You have 4 unread Notifications</p>
+      									</div>
+      									<div class="main-notification-list Notification-scroll">
+      										<a class="d-flex p-3 border-bottom" href="#">
+      											<div class="notifyimg bg-pink">
+      												<i class="la la-file-alt text-white"></i>
+      											</div>
+      											<div class="ms-3">
+      												<h5 class="notification-label mb-1">New files available</h5>
+      												<div class="notification-subtext">10 hour ago</div>
+      											</div>
+      											<div class="ms-auto" >
+      												<i class="las la-angle-right text-end text-muted"></i>
+      											</div>
+      										</a>
+      										<a class="d-flex p-3 border-bottom" href="#">
+      											<div class="notifyimg bg-purple">
+      												<i class="la la-gem text-white"></i>
+      											</div>
+      											<div class="ms-3">
+      												<h5 class="notification-label mb-1">Updates Available</h5>
+      												<div class="notification-subtext">2 days ago</div>
+      											</div>
+      											<div class="ms-auto" >
+      												<i class="las la-angle-right text-end text-muted"></i>
+      											</div>
+      										</a>
+      										<a class="d-flex p-3 border-bottom" href="#">
+      											<div class="notifyimg bg-success">
+      												<i class="la la-shopping-basket text-white"></i>
+      											</div>
+      											<div class="ms-3">
+      												<h5 class="notification-label mb-1">New Order Received</h5>
+      												<div class="notification-subtext">1 hour ago</div>
+      											</div>
+      											<div class="ms-auto" >
+      												<i class="las la-angle-right text-end text-muted"></i>
+      											</div>
+      										</a>
+      										<a class="d-flex p-3 border-bottom" href="#">
+      											<div class="notifyimg bg-warning">
+      												<i class="la la-envelope-open text-white"></i>
+      											</div>
+      											<div class="ms-3">
+      												<h5 class="notification-label mb-1">New review received</h5>
+      												<div class="notification-subtext">1 day ago</div>
+      											</div>
+      											<div class="ms-auto" >
+      												<i class="las la-angle-right text-end text-muted"></i>
+      											</div>
+      										</a>
+      										<a class="d-flex p-3 border-bottom" href="#">
+      											<div class="notifyimg bg-danger">
+      												<i class="la la-user-check text-white"></i>
+      											</div>
+      											<div class="ms-3">
+      												<h5 class="notification-label mb-1">22 verified registrations</h5>
+      												<div class="notification-subtext">2 hour ago</div>
+      											</div>
+      											<div class="ms-auto" >
+      												<i class="las la-angle-right text-end text-muted"></i>
+      											</div>
+      										</a>
+      										<a class="d-flex p-3 border-bottom" href="#">
+      											<div class="notifyimg bg-primary">
+      												<i class="la la-check-circle text-white"></i>
+      											</div>
+      											<div class="ms-3">
+      												<h5 class="notification-label mb-1">Project has been approved</h5>
+      												<div class="notification-subtext">4 hour ago</div>
+      											</div>
+      											<div class="ms-auto" >
+      												<i class="las la-angle-right text-end text-muted"></i>
+      											</div>
+      										</a>
+      									</div>
+      									<div class="dropdown-footer">
+      										<a href="">VIEW ALL</a>
+      									</div>
+      								</div>
+      							</li>
+      							<li class="nav-item full-screen fullscreen-button">
+      								<a class="new nav-link full-screen-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg></a>
+      							</li>
+      							<li class="dropdown main-profile-menu nav nav-item nav-link">
+      								<a class="profile-user d-flex" href=""><img alt="" src="../../assets/img/faces/6.jpg"></a>
+      								<div class="dropdown-menu">
+      									<div class="main-header-profile bg-primary p-3">
+      										<div class="d-flex wd-100p">
+      											<div class="main-img-user"><img alt="" src="../../assets/img/faces/6.jpg" class=""></div>
+      											<div class="ms-3 my-auto">
+      												<h6>Petey Cruiser</h6><span>Premium Member</span>
+      											</div>
+      										</div>
+      									</div>
+      									<a class="dropdown-item" href=""><i class="bx bx-user-circle"></i>Profile</a>
+      									<a class="dropdown-item" href=""><i class="bx bx-cog"></i> Edit Profile</a>
+      									<a class="dropdown-item" href=""><i class="bx bxs-inbox"></i>Inbox</a>
+      									<a class="dropdown-item" href=""><i class="bx bx-envelope"></i>Messages</a>
+      									<a class="dropdown-item" href=""><i class="bx bx-slider-alt"></i> Account Settings</a>
+      									<a class="dropdown-item" href="signin.html"><i class="bx bx-log-out"></i> Sign Out</a>
+      								</div>
+      							</li>
+      							<li class="dropdown main-header-message right-toggle">
+      								<a class="nav-link pe-0" data-bs-toggle="sidebar-right" data-bs-target=".sidebar-right">
+      									<svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      								</a>
+      							</li>
+      						</ul>
+      					</div>
+      				</div>
+      			</div>
+      			<!-- /main-header -->
+      
+      			<!-- centerlogo-header opened -->
+      			<div class="main-header nav nav-item hor-header top-header">
+      				<div class="container">
+      					<div class="main-header-left ">
+      						<a class="animated-arrow hor-toggle horizontal-navtoggle"><span></span></a><!-- sidebar-toggle-->
+      						<a class="header-brand" href="index.html">
+      							<img src="../../assets/img/brand/logo-white.png" class="desktop-dark">
+      							<img src="../../assets/img/brand/logo.png" class="desktop-logo">
+      							<img src="../../assets/img/brand/favicon.png" class="desktop-logo-1">
+      							<img src="../../assets/img/brand/favicon-white.png" class="desktop-logo-dark">
+      						</a>
+      						<div class="main-header-center  ml-4">
+      							<input class="form-control" placeholder="Search for anything..." type="search"><button class="btn"><i class="fe fe-search"></i></button>
+      						</div>
+      					</div><!-- search -->
+      					<a class="header-brand header-brand2 d-none d-lg-block" href="index.html">
+      						<img src="../../assets/img/brand/logo-white.png" class="desktop-dark">
+      						<img src="../../assets/img/brand/logo.png" class="desktop-logo">
+      						<img src="../../assets/img/brand/favicon.png" class="desktop-logo-1">
+      						<img src="../../assets/img/brand/favicon-white.png" class="desktop-logo-dark">
+      					</a>
+      					<div class="main-header-right">
+      						<ul class="nav nav-item  navbar-nav-right ml-auto">
+      							<li class="nav">
+      									<div class="dropdown  nav-itemd-none d-md-flex">
+      										<a href="#" class="d-flex  nav-item country-flag1" data-bs-toggle="dropdown" aria-expanded="false">
+      											<span class="avatar country-Flag mr-0 align-self-center bg-transparent"><img src="../../assets/img/flags/us_flag.jpg" alt="img"></span>
+      											<div class="my-auto">
+      												<strong class="mr-2 ml-2 my-auto">English</strong>
+      											</div>
+      										</a>
+      										<div class="dropdown-menu dropdown-menu-left dropdown-menu-arrow" x-placement="bottom-end">
+      											<a href="#" class="dropdown-item d-flex ">
+      												<span class="avatar  mr-3 align-self-center bg-transparent"><img src="../../assets/img/flags/french_flag.jpg" alt="img"></span>
+      												<div class="d-flex">
+      													<span class="mt-2">French</span>
+      												</div>
+      											</a>
+      											<a href="#" class="dropdown-item d-flex">
+      												<span class="avatar  mr-3 align-self-center bg-transparent"><img src="../../assets/img/flags/germany_flag.jpg" alt="img"></span>
+      												<div class="d-flex">
+      													<span class="mt-2">Germany</span>
+      												</div>
+      											</a>
+      											<a href="#" class="dropdown-item d-flex">
+      												<span class="avatar mr-3 align-self-center bg-transparent"><img src="../../assets/img/flags/italy_flag.jpg" alt="img"></span>
+      												<div class="d-flex">
+      													<span class="mt-2">Italy</span>
+      												</div>
+      											</a>
+      											<a href="#" class="dropdown-item d-flex">
+      												<span class="avatar mr-3 align-self-center bg-transparent"><img src="../../assets/img/flags/russia_flag.jpg" alt="img"></span>
+      												<div class="d-flex">
+      													<span class="mt-2">Russia</span>
+      												</div>
+      											</a>
+      											<a href="#" class="dropdown-item d-flex">
+      												<span class="avatar  mr-3 align-self-center bg-transparent"><img src="../../assets/img/flags/spain_flag.jpg" alt="img"></span>
+      												<div class="d-flex">
+      													<span class="mt-2">spain</span>
+      												</div>
+      											</a>
+      										</div>
+      									</div>
+      							</li>
+      							<li class="nav-link" id="bs-example-navbar-collapse-1">
+      								<form class="navbar-form" role="search">
+      									<div class="input-group">
+      										<input type="text" class="form-control" placeholder="Search">
+      										<span class="input-group-btn">
+      											<button type="reset" class="btn btn-default">
+      												<i class="fas fa-times"></i>
+      											</button>
+      											<button type="submit" class="btn btn-default nav-link resp-btn">
+      												<svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      											</button>
+      										</span>
+      									</div>
+      								</form>
+      							</li>
+      							<li class="dropdown nav-item main-header-message ">
+      								<a class="new nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><span class=" pulse-danger"></span></a>
+      								<div class="dropdown-menu">
+      									<div class="menu-header-content bg-primary text-left">
+      										<div class="d-flex">
+      											<h6 class="dropdown-title mb-1 tx-15 text-white font-weight-semibold">Messages</h6>
+      											<span class="badge badge-pill badge-warning ml-auto my-auto float-right">Mark All Read</span>
+      										</div>
+      										<p class="dropdown-title-text subtext mb-0 text-white op-6 pb-0 tx-12 ">You have 4 unread messages</p>
+      									</div>
+      									<div class="main-message-list chat-scroll">
+      										<a href="#" class="p-3 d-flex border-bottom">
+      											<div class="  drop-img  cover-image  " data-image-src="../../assets/img/faces/3.jpg">
+      												<span class="avatar-status bg-teal"></span>
+      											</div>
+      											<div class="wd-90p">
+      												<div class="d-flex">
+      													<h5 class="mb-1 name">Petey Cruiser</h5>
+      												</div>
+      												<p class="mb-0 desc">I'm sorry but i'm not sure how to help you with that......</p>
+      												<p class="time mb-0 text-left float-left ml-2 mt-2">Mar 15 3:55 PM</p>
+      											</div>
+      										</a>
+      										<a href="#" class="p-3 d-flex border-bottom">
+      											<div class="drop-img cover-image" data-image-src="../../assets/img/faces/2.jpg">
+      												<span class="avatar-status bg-teal"></span>
+      											</div>
+      											<div class="wd-90p">
+      												<div class="d-flex">
+      													<h5 class="mb-1 name">Jimmy Changa</h5>
+      												</div>
+      												<p class="mb-0 desc">All set ! Now, time to get to you now......</p>
+      												<p class="time mb-0 text-left float-left ml-2 mt-2">Mar 06 01:12 AM</p>
+      											</div>
+      										</a>
+      										<a href="#" class="p-3 d-flex border-bottom">
+      											<div class="drop-img cover-image" data-image-src="../../assets/img/faces/9.jpg">
+      												<span class="avatar-status bg-teal"></span>
+      											</div>
+      											<div class="wd-90p">
+      												<div class="d-flex">
+      													<h5 class="mb-1 name">Graham Cracker</h5>
+      												</div>
+      												<p class="mb-0 desc">Are you ready to pickup your Delivery...</p>
+      												<p class="time mb-0 text-left float-left ml-2 mt-2">Feb 25 10:35 AM</p>
+      											</div>
+      										</a>
+      										<a href="#" class="p-3 d-flex border-bottom">
+      											<div class="drop-img cover-image" data-image-src="../../assets/img/faces/12.jpg">
+      												<span class="avatar-status bg-teal"></span>
+      											</div>
+      											<div class="wd-90p">
+      												<div class="d-flex">
+      													<h5 class="mb-1 name">Donatella Nobatti</h5>
+      												</div>
+      												<p class="mb-0 desc">Here are some products ...</p>
+      												<p class="time mb-0 text-left float-left ml-2 mt-2">Feb 12 05:12 PM</p>
+      											</div>
+      										</a>
+      										<a href="#" class="p-3 d-flex border-bottom">
+      											<div class="drop-img cover-image" data-image-src="../../assets/img/faces/5.jpg">
+      												<span class="avatar-status bg-teal"></span>
+      											</div>
+      											<div class="wd-90p">
+      												<div class="d-flex">
+      													<h5 class="mb-1 name">Anne Fibbiyon</h5>
+      												</div>
+      												<p class="mb-0 desc">I'm sorry but i'm not sure how...</p>
+      												<p class="time mb-0 text-left float-left ml-2 mt-2">Jan 29 03:16 PM</p>
+      											</div>
+      										</a>
+      									</div>
+      									<div class="text-center dropdown-footer">
+      										<a href="text-center">VIEW ALL</a>
+      									</div>
+      								</div>
+      							</li>
+      							<li class="dropdown nav-item main-header-notification">
+      								<a class="new nav-link" href="#">
+      								<svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg><span class=" pulse"></span></a>
+      								<div class="dropdown-menu">
+      									<div class="menu-header-content bg-primary text-left">
+      										<div class="d-flex">
+      											<h6 class="dropdown-title mb-1 tx-15 text-white font-weight-semibold">Notifications</h6>
+      											<span class="badge badge-pill badge-warning ml-auto my-auto float-right">Mark All Read</span>
+      										</div>
+      										<p class="dropdown-title-text subtext mb-0 text-white op-6 pb-0 tx-12 ">You have 4 unread Notifications</p>
+      									</div>
+      									<div class="main-notification-list Notification-scroll">
+      										<a class="d-flex p-3 border-bottom" href="#">
+      											<div class="notifyimg bg-pink">
+      												<i class="la la-file-alt text-white"></i>
+      											</div>
+      											<div class="ml-3">
+      												<h5 class="notification-label mb-1">New files available</h5>
+      												<div class="notification-subtext">10 hour ago</div>
+      											</div>
+      											<div class="ml-auto" >
+      												<i class="las la-angle-right text-right text-muted"></i>
+      											</div>
+      										</a>
+      										<a class="d-flex p-3" href="#">
+      											<div class="notifyimg bg-purple">
+      												<i class="la la-gem text-white"></i>
+      											</div>
+      											<div class="ml-3">
+      												<h5 class="notification-label mb-1">Updates Available</h5>
+      												<div class="notification-subtext">2 days ago</div>
+      											</div>
+      											<div class="ml-auto" >
+      												<i class="las la-angle-right text-right text-muted"></i>
+      											</div>
+      										</a>
+      										<a class="d-flex p-3 border-bottom" href="#">
+      											<div class="notifyimg bg-success">
+      												<i class="la la-shopping-basket text-white"></i>
+      											</div>
+      											<div class="ml-3">
+      												<h5 class="notification-label mb-1">New Order Received</h5>
+      												<div class="notification-subtext">1 hour ago</div>
+      											</div>
+      											<div class="ml-auto" >
+      												<i class="las la-angle-right text-right text-muted"></i>
+      											</div>
+      										</a>
+      										<a class="d-flex p-3 border-bottom" href="#">
+      											<div class="notifyimg bg-warning">
+      												<i class="la la-envelope-open text-white"></i>
+      											</div>
+      											<div class="ml-3">
+      												<h5 class="notification-label mb-1">New review received</h5>
+      												<div class="notification-subtext">1 day ago</div>
+      											</div>
+      											<div class="ml-auto" >
+      												<i class="las la-angle-right text-right text-muted"></i>
+      											</div>
+      										</a>
+      										<a class="d-flex p-3 border-bottom" href="#">
+      											<div class="notifyimg bg-danger">
+      												<i class="la la-user-check text-white"></i>
+      											</div>
+      											<div class="ml-3">
+      												<h5 class="notification-label mb-1">22 verified registrations</h5>
+      												<div class="notification-subtext">2 hour ago</div>
+      											</div>
+      											<div class="ml-auto" >
+      												<i class="las la-angle-right text-right text-muted"></i>
+      											</div>
+      										</a>
+      										<a class="d-flex p-3 border-bottom" href="#">
+      											<div class="notifyimg bg-primary">
+      												<i class="la la-check-circle text-white"></i>
+      											</div>
+      											<div class="ml-3">
+      												<h5 class="notification-label mb-1">Project has been approved</h5>
+      												<div class="notification-subtext">4 hour ago</div>
+      											</div>
+      											<div class="ml-auto" >
+      												<i class="las la-angle-right text-right text-muted"></i>
+      											</div>
+      										</a>
+      									</div>
+      									<div class="dropdown-footer">
+      										<a href="">VIEW ALL</a>
+      									</div>
+      								</div>
+      							</li>
+      							<li class="nav-item full-screen fullscreen-button">
+      								<a class="new nav-link full-screen-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg></a>
+      							</li>
+      							<li class="dropdown main-profile-menu nav nav-item nav-link">
+      								<a class="profile-user d-flex" href=""><img alt="" src="../../assets/img/faces/6.jpg"></a>
+      								<div class="dropdown-menu">
+      									<div class="main-header-profile bg-primary p-3">
+      										<div class="d-flex wd-100p">
+      											<div class="main-img-user"><img alt="" src="../../assets/img/faces/6.jpg" class=""></div>
+      											<div class="ml-3 my-auto">
+      												<h6>Petey Cruiser</h6><span>Premium Member</span>
+      											</div>
+      										</div>
+      									</div>
+      									<a class="dropdown-item" href=""><i class="bx bx-user-circle"></i>Profile</a>
+      									<a class="dropdown-item" href=""><i class="bx bx-cog"></i> Edit Profile</a>
+      									<a class="dropdown-item" href=""><i class="bx bxs-inbox"></i>Inbox</a>
+      									<a class="dropdown-item" href=""><i class="bx bx-envelope"></i>Messages</a>
+      									<a class="dropdown-item" href=""><i class="bx bx-slider-alt"></i> Account Settings</a>
+      									<a class="dropdown-item" href="signin.html"><i class="bx bx-log-out"></i> Sign Out</a>
+      								</div>
+      							</li>
+      							<li class="dropdown main-header-message right-toggle">
+      								<a class="nav-link pr-0" data-bs-toggle="sidebar-right" data-bs-target=".sidebar-right">
+      									<svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      								</a>
+      							</li>
+      						</ul>
+      					</div>
+      				</div>
+      			</div>
+      			<!-- /centerlogo-header closed -->
+      
+            <!--Horizontal-main -->
+      			<div class="sticky">
+      				<div class="horizontal-main hor-menu clearfix side-header">
+      					<div class="horizontal-mainwrapper container clearfix">
+      						<!--Nav-->
+      						<nav class="horizontalMenu clearfix">
+      							<ul class="horizontalMenu-list">
+      								<li aria-haspopup="true"><a href="index.html" class=""><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24" ><path d="M0 0h24v24H0V0z" fill="none"/><path d="M5 5h4v6H5zm10 8h4v6h-4zM5 17h4v2H5zM15 5h4v2h-4z" opacity=".3"/><path d="M3 13h8V3H3v10zm2-8h4v6H5V5zm8 16h8V11h-8v10zm2-8h4v6h-4v-6zM13 3v6h8V3h-8zm6 4h-4V5h4v2zM3 21h8v-6H3v6zm2-4h4v2H5v-2z"/></svg>Dashboard</a></li>
+      								<li aria-haspopup="true"><a href="#" class="sub-icon"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 5H5v14h14V5zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" opacity=".3"/><path d="M3 5v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2zm2 0h14v14H5V5zm2 5h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/></svg> Charts<i class="fe fe-chevron-down horizontal-icon"></i></a>
+      									<ul class="sub-menu">
+      										<li aria-haspopup="true"><a href="chart-morris.html" class="slide-item">Morris Charts</a></li>
+      										<li aria-haspopup="true"><a href="chart-flot.html" class="slide-item">Flot Charts</a></li>
+      										<li aria-haspopup="true"><a href="chart-chartjs.html" class="slide-item">ChartJS</a></li>
+      										<li aria-haspopup="true"><a href="chart-echart.html" class="slide-item">Echart</a></li>
+      										<li aria-haspopup="true"><a href="chart-sparkline.html" class="slide-item">Sparkline</a></li>
+      										<li aria-haspopup="true"><a href="chart-peity.html" class="slide-item"> Chart-peity</a></li>
+      									</ul>
+      								</li>
+      								<li aria-haspopup="true"><a href="#" class="sub-icon"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M3.31 11l2.2 8.01L18.5 19l2.2-8H3.31zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" opacity=".3"/><path d="M22 9h-4.79l-4.38-6.56c-.19-.28-.51-.42-.83-.42s-.64.14-.83.43L6.79 9H2c-.55 0-1 .45-1 1 0 .09.01.18.04.27l2.54 9.27c.23.84 1 1.46 1.92 1.46h13c.92 0 1.69-.62 1.93-1.46l2.54-9.27L23 10c0-.55-.45-1-1-1zM12 4.8L14.8 9H9.2L12 4.8zM18.5 19l-12.99.01L3.31 11H20.7l-2.2 8zM12 13c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg> E-Commerce<i class="fe fe-chevron-down horizontal-icon"></i></a>
+      									<ul class="sub-menu">
+      										<li aria-haspopup="true"><a href="products.html" class="slide-item"> Products</a></li>
+      										<li aria-haspopup="true"><a href="product-details.html" class="slide-item">Product-Details</a></li>
+      										<li aria-haspopup="true"><a href="product-cart.html" class="slide-item">Shopping Cart</a></li>
+      									</ul>
+      								</li>
+      								<li aria-haspopup="true"><a href="#" class="sub-icon"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M6.26 9L12 13.47 17.74 9 12 4.53z" opacity=".3"/><path d="M19.37 12.8l-7.38 5.74-7.37-5.73L3 14.07l9 7 9-7zM12 2L3 9l1.63 1.27L12 16l7.36-5.73L21 9l-9-7zm0 11.47L6.26 9 12 4.53 17.74 9 12 13.47z"/></svg> Elements<i class="fe fe-chevron-down horizontal-icon"></i></a>
+      									<div class="horizontal-megamenu clearfix">
+      										<div class="container">
+      											<div class="mega-menubg hor-mega-menu">
+      												<div class="row">
+      													<div class="col-lg-3 col-md-12 col-xs-12 link-list">
+      
+      														<ul>
+      															<li><h3 class="fs-14 fw-bold mb-1 mt-2">Elements</h3></li>
+      															<li aria-haspopup="true"><a href="alerts.html" class="slide-item">Alerts</a></li>
+      															<li aria-haspopup="true"><a href="avatar.html" class="slide-item">Avatar</a></li>
+      															<li aria-haspopup="true"><a href="breadcrumbs.html" class="slide-item">Breadcrumbs</a></li>
+      															<li aria-haspopup="true"><a href="buttons.html" class="slide-item">Buttons</a></li>
+      															<li aria-haspopup="true"><a href="badge.html" class="slide-item">Badge</a></li>
+      															<li aria-haspopup="true"><a href="dropdown.html" class="slide-item">Dropdown</a></li>
+      															<li aria-haspopup="true"><a href="thumbnails.html" class="slide-item">Thumbnails</a></li>
+      															<li aria-haspopup="true"><a href="images.html" class="slide-item">Images</a></li>
+      															<li aria-haspopup="true"><a href="list-group.html" class="slide-item">List Group</a></li>
+      
+      														</ul>
+      													</div>
+      													<div class="col-lg-3 col-md-12 col-xs-12 link-list">
+      														<ul>
+      															<li aria-haspopup="true"><a href="navigation.html" class="slide-item">Navigation</a></li>
+      															<li aria-haspopup="true"><a href="pagination.html" class="slide-item">Pagination</a></li>
+      															<li aria-haspopup="true"><a href="popover.html" class="slide-item">Popover</a></li>
+      															<li aria-haspopup="true"><a href="progress.html" class="slide-item">Progress</a></li>
+      															<li aria-haspopup="true"><a href="spinners.html" class="slide-item">Spinners</a></li>
+      															<li aria-haspopup="true"><a href="media-object.html" class="slide-item">Media Object</a></li>
+      															<li aria-haspopup="true"><a href="typography.html" class="slide-item">Typography</a></li>
+      															<li aria-haspopup="true"><a href="tooltip.html" class="slide-item">Tooltip</a></li>
+      															<li aria-haspopup="true"><a href="toast.html" class="slide-item">Toast</a></li>
+      															<li aria-haspopup="true"><a href="tags.html" class="slide-item">Tags</a></li>
+      														</ul>
+      													</div>
+      													<div class="col-lg-3 col-md-12 col-xs-12 link-list">
+      														<ul>
+      															<li aria-haspopup="true"><a href="tabs.html" class="slide-item">Tabs</a></li>
+      															<li><h3 class="fs-14 fw-bold mb-1 mt-2">Apps</h3></li>
+      															<li aria-haspopup="true"><a href="cards.html" class="slide-item">Cards</a></li>
+      															<li aria-haspopup="true"><a href="draggablecards.html" class="slide-item">Draggablecards</a></li>
+      															<li aria-haspopup="true"><a href="rangeslider.html" class="slide-item">Range-slider</a></li>
+      															<li aria-haspopup="true"><a href="calendar.html" class="slide-item">Calendar</a></li>
+      															<li aria-haspopup="true"><a href="contacts.html" class="slide-item">Contacts</a></li>
+      															<li aria-haspopup="true"><a href="image-compare.html" class="slide-item">Image-compare</a></li>
+      															<li aria-haspopup="true"><a href="notification.html" class="slide-item">Notification</a></li>
+      															<li aria-haspopup="true"><a href="widget-notification.html" class="slide-item">Widget-notification</a></li>
+      														</ul>
+      													</div>
+      													<div class="col-lg-3 col-md-12 col-xs-12 link-list">
+      														<ul>
+      															<li aria-haspopup="true"><a href="treeview.html" class="slide-item">Treeview</a></li>
+      															<li><h3 class="fs-14 fw-bold mb-1 mt-2">Icons <span class="badge bg-danger ">New</span></h3></li>
+      															<li aria-haspopup="true"><a href="icons.html" class="slide-item">Icons</a></li>
+      															<li><h3 class="fs-14 fw-bold mb-1 mt-2">Maps</h3></li>
+      															<li aria-haspopup="true"><a href="map-leaflet.html" class="slide-item">Mapel Maps</a></li>
+      															<li aria-haspopup="true"><a href="map-vector.html" class="slide-item">Vector Maps</a></li>
+      
+      															<li><h3 class="fs-14 fw-bold mb-1 mt-2">Tables</h3></li>
+      															<li aria-haspopup="true"><a href="table-basic.html" class="slide-item">Basic Tables</a></li>
+      															<li aria-haspopup="true"><a href="table-data.html" class="slide-item">Data Tables</a></li>
+      
+      														</ul>
+      													</div>
+      												</div>
+      											</div>
+      										</div>
+      									</div>
+      								</li>
+      								<li aria-haspopup="true"><a href="#" class="sub-icon"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24" ><path d="M0 0h24v24H0z" fill="none"/><path d="M12 4c-4.41 0-8 3.59-8 8s3.59 8 8 8c.28 0 .5-.22.5-.5 0-.16-.08-.28-.14-.35-.41-.46-.63-1.05-.63-1.65 0-1.38 1.12-2.5 2.5-2.5H16c2.21 0 4-1.79 4-4 0-3.86-3.59-7-8-7zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 10 6.5 10s1.5.67 1.5 1.5S7.33 13 6.5 13zm3-4C8.67 9 8 8.33 8 7.5S8.67 6 9.5 6s1.5.67 1.5 1.5S10.33 9 9.5 9zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 6 14.5 6s1.5.67 1.5 1.5S15.33 9 14.5 9zm4.5 2.5c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5.67-1.5 1.5-1.5 1.5.67 1.5 1.5z" opacity=".3"/><path d="M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10c1.38 0 2.5-1.12 2.5-2.5 0-.61-.23-1.21-.64-1.67-.08-.09-.13-.21-.13-.33 0-.28.22-.5.5-.5H16c3.31 0 6-2.69 6-6 0-4.96-4.49-9-10-9zm4 13h-1.77c-1.38 0-2.5 1.12-2.5 2.5 0 .61.22 1.19.63 1.65.06.07.14.19.14.35 0 .28-.22.5-.5.5-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.14 8 7c0 2.21-1.79 4-4 4z"/><circle cx="6.5" cy="11.5" r="1.5"/><circle cx="9.5" cy="7.5" r="1.5"/><circle cx="14.5" cy="7.5" r="1.5"/><circle cx="17.5" cy="11.5" r="1.5"/></svg> Advanced UI <i class="fe fe-chevron-down horizontal-icon"></i></a>
+      									<ul class="sub-menu">
+      										<li aria-haspopup="true"><a href="accordion.html" class="slide-item"> Accordion</a></li>
+      										<li aria-haspopup="true"><a href="carousel.html" class="slide-item" >Carousel</a></li>
+      										<li aria-haspopup="true"><a href="collapse.html" class="slide-item">Collapse</a></li>
+      										<li aria-haspopup="true"><a href="modals.html" class="slide-item">Modals</a></li>
+      										<li aria-haspopup="true"><a href="timeline.html" class="slide-item">Timeline</a></li>
+      										<li aria-haspopup="true"><a href="sweet-alert.html" class="slide-item">Sweet Alert</a></li>
+      										<li aria-haspopup="true"><a href="rating.html" class="slide-item">Ratings</a></li>
+      										<li aria-haspopup="true"><a href="counters.html" class="slide-item">Counters</a></li>
+      										<li aria-haspopup="true"><a href="search.html" class="slide-item">Search</a></li>
+      										<li aria-haspopup="true"><a href="userlist.html" class="slide-item"> Userlist</a></li>
+      										<li aria-haspopup="true"><a href="blog.html" class="slide-item">Blog</a></li>
+      										<li aria-haspopup="true" class="sub-menu-sub"><a href="#">Submenu</a>
+      											<ul class="sub-menu">
+      												<li aria-haspopup="true"><a href="#" class="slide-item">Submenu-01</a></li>
+      												<li aria-haspopup="true" class="slide-item sub-menu-sub"><a href="#">Submenu-02</a>
+      													<ul class="sub-menu">
+      														<li aria-haspopup="true"><a href="#" class="slide-item">SubmenuLevel-01</a></li>
+      														<li aria-haspopup="true"><a href="#" class="slide-item">SubmenuLevel-02</a></li>
+      														<li aria-haspopup="true"><a href="#" class="slide-item">SubmenuLevel-02</a></li>
+      													</ul>
+      												</li>
+      												<li aria-haspopup="true"><a href="form-layouts.html" class="slide-item">Submenu-03</a></li>
+      											</ul>
+      										</li>
+      									</ul>
+      								</li>
+      								<li aria-haspopup="true"><a href="#" class="sub-icon"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24" ><path d="M0 0h24v24H0V0z" fill="none"/><path d="M10.9 19.91c.36.05.72.09 1.1.09 2.18 0 4.16-.88 5.61-2.3L14.89 13l-3.99 6.91zm-1.04-.21l2.71-4.7H4.59c.93 2.28 2.87 4.03 5.27 4.7zM8.54 12L5.7 7.09C4.64 8.45 4 10.15 4 12c0 .69.1 1.36.26 2h5.43l-1.15-2zm9.76 4.91C19.36 15.55 20 13.85 20 12c0-.69-.1-1.36-.26-2h-5.43l3.99 6.91zM13.73 9h5.68c-.93-2.28-2.88-4.04-5.28-4.7L11.42 9h2.31zm-3.46 0l2.83-4.92C12.74 4.03 12.37 4 12 4c-2.18 0-4.16.88-5.6 2.3L9.12 11l1.15-2z" opacity=".3"/><path d="M12 22c5.52 0 10-4.48 10-10 0-4.75-3.31-8.72-7.75-9.74l-.08-.04-.01.02C13.46 2.09 12.74 2 12 2 6.48 2 2 6.48 2 12s4.48 10 10 10zm0-2c-.38 0-.74-.04-1.1-.09L14.89 13l2.72 4.7C16.16 19.12 14.18 20 12 20zm8-8c0 1.85-.64 3.55-1.7 4.91l-4-6.91h5.43c.17.64.27 1.31.27 2zm-.59-3h-7.99l2.71-4.7c2.4.66 4.35 2.42 5.28 4.7zM12 4c.37 0 .74.03 1.1.08L10.27 9l-1.15 2L6.4 6.3C7.84 4.88 9.82 4 12 4zm-8 8c0-1.85.64-3.55 1.7-4.91L8.54 12l1.15 2H4.26C4.1 13.36 4 12.69 4 12zm6.27 3h2.3l-2.71 4.7c-2.4-.67-4.35-2.42-5.28-4.7h5.69z"/></svg> Utilities <i class="fe fe-chevron-down horizontal-icon"></i></a>
+      									<ul class="sub-menu">
+      										<li aria-haspopup="true"><a href="background.html" class="slide-item">Background</a></li>
+      										<li aria-haspopup="true"><a href="border.html" class="slide-item">Border</a></li>
+      										<li aria-haspopup="true"><a href="display.html" class="slide-item">Display</a></li>
+      										<li aria-haspopup="true"><a href="flex.html" class="slide-item">Flex</a></li>
+      										<li aria-haspopup="true"><a href="height.html" class="slide-item">Height</a></li>
+      										<li aria-haspopup="true"><a href="margin.html" class="slide-item">Margin</a></li>
+      										<li aria-haspopup="true"><a href="padding.html" class="slide-item">Padding</a></li>
+      										<li aria-haspopup="true"><a href="position.html" class="slide-item">Position</a></li>
+      										<li aria-haspopup="true"><a href="width.html" class="slide-item">Width</a></li>
+      										<li aria-haspopup="true"><a href="extras.html" class="slide-item">Extras</a></li>
+      									</ul>
+      								</li>
+      								<li aria-haspopup="true"><a href="#" class="sub-icon"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" class="side-menu__icon" viewBox="0 0 24 24" ><g><rect fill="none"/></g><g><g/><g><path d="M21,5c-1.11-0.35-2.33-0.5-3.5-0.5c-1.95,0-4.05,0.4-5.5,1.5c-1.45-1.1-3.55-1.5-5.5-1.5S2.45,4.9,1,6v14.65 c0,0.25,0.25,0.5,0.5,0.5c0.1,0,0.15-0.05,0.25-0.05C3.1,20.45,5.05,20,6.5,20c1.95,0,4.05,0.4,5.5,1.5c1.35-0.85,3.8-1.5,5.5-1.5 c1.65,0,3.35,0.3,4.75,1.05c0.1,0.05,0.15,0.05,0.25,0.05c0.25,0,0.5-0.25,0.5-0.5V6C22.4,5.55,21.75,5.25,21,5z M3,18.5V7 c1.1-0.35,2.3-0.5,3.5-0.5c1.34,0,3.13,0.41,4.5,0.99v11.5C9.63,18.41,7.84,18,6.5,18C5.3,18,4.1,18.15,3,18.5z M21,18.5 c-1.1-0.35-2.3-0.5-3.5-0.5c-1.34,0-3.13,0.41-4.5,0.99V7.49c1.37-0.59,3.16-0.99,4.5-0.99c1.2,0,2.4,0.15,3.5,0.5V18.5z"/><path d="M11,7.49C9.63,6.91,7.84,6.5,6.5,6.5C5.3,6.5,4.1,6.65,3,7v11.5C4.1,18.15,5.3,18,6.5,18 c1.34,0,3.13,0.41,4.5,0.99V7.49z" opacity=".3"/></g><g><path d="M17.5,10.5c0.88,0,1.73,0.09,2.5,0.26V9.24C19.21,9.09,18.36,9,17.5,9c-1.28,0-2.46,0.16-3.5,0.47v1.57 C14.99,10.69,16.18,10.5,17.5,10.5z"/><path d="M17.5,13.16c0.88,0,1.73,0.09,2.5,0.26V11.9c-0.79-0.15-1.64-0.24-2.5-0.24c-1.28,0-2.46,0.16-3.5,0.47v1.57 C14.99,13.36,16.18,13.16,17.5,13.16z"/><path d="M17.5,15.83c0.88,0,1.73,0.09,2.5,0.26v-1.52c-0.79-0.15-1.64-0.24-2.5-0.24c-1.28,0-2.46,0.16-3.5,0.47v1.57 C14.99,16.02,16.18,15.83,17.5,15.83z"/></g></g></svg>Pages <i class="fe fe-chevron-down horizontal-icon"></i></a>
+      									<ul class="sub-menu">
+      										<li aria-haspopup="true"><a href="profile.html" class="slide-item">Profile</a></li>
+      										<li aria-haspopup="true"><a href="editprofile.html" class="slide-item">Edit-profile</a></li>
+      										<li aria-haspopup="true" class="sub-menu-sub"><a href="#">Mail</a>
+      											<ul class="sub-menu">
+      												<li aria-haspopup="true"><a href="mail.html" class="slide-item">Mail-inbox</a></li>
+      												<li aria-haspopup="true"><a href="mail-compose.html" class="slide-item">Mail-compose</a></li>
+      												<li aria-haspopup="true"><a href="mail-read.html" class="slide-item">Mail-read</a></li>
+      												<li aria-haspopup="true"><a href="mail-settings.html" class="slide-item">Mail-settings</a></li>
+      												<li aria-haspopup="true"><a href="chat.html" class="slide-item">Chat</a></li>
+      
+      											</ul>
+      										</li>
+      										<li aria-haspopup="true" class="sub-menu-sub"><a href="#">Forms</a>
+      											<ul class="sub-menu">
+      												<li aria-haspopup="true"><a href="form-elements.html" class="slide-item">Form Elements</a></li>
+      												<li aria-haspopup="true"><a href="form-advanced.html" class="slide-item">Advanced Forms</a></li>
+      												<li aria-haspopup="true"><a href="form-layouts.html" class="slide-item">Form Layouts</a></li>
+      												<li aria-haspopup="true"><a href="form-validation.html" class="slide-item">Form Validation</a></li>
+      												<li aria-haspopup="true"><a href="form-wizards.html" class="slide-item">Form Wizards</a></li>
+      												<li aria-haspopup="true"><a href="form-editor.html" class="slide-item">WYSIWYG Editor</a></li>
+      											</ul>
+      										</li>
+      										<li aria-haspopup="true"><a href="invoice.html" class="slide-item">Invoice</a></li>
+      										<li aria-haspopup="true"><a href="todotask.html" class="slide-item">Todotask</a></li>
+      										<li aria-haspopup="true"><a href="pricing.html" class="slide-item">Pricing</a></li>
+      										<li aria-haspopup="true"><a href="gallery.html" class="slide-item">Gallery</a></li>
+      										<li aria-haspopup="true"><a href="faq.html" class="slide-item">Faqs</a></li>
+      										<li aria-haspopup="true"><a href="empty.html" class="slide-item">Empty Page</a></li>
+      									</ul>
+      								</li>
+      								<li aria-haspopup="true"><a href="widgets.html" class=""><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M3.31 11l2.2 8.01L18.5 19l2.2-8H3.31zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" opacity=".3"/><path d="M22 9h-4.79l-4.38-6.56c-.19-.28-.51-.42-.83-.42s-.64.14-.83.43L6.79 9H2c-.55 0-1 .45-1 1 0 .09.01.18.04.27l2.54 9.27c.23.84 1 1.46 1.92 1.46h13c.92 0 1.69-.62 1.93-1.46l2.54-9.27L23 10c0-.55-.45-1-1-1zM12 4.8L14.8 9H9.2L12 4.8zM18.5 19l-12.99.01L3.31 11H20.7l-2.2 8zM12 13c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg> Widgets </a></li>
+      								<li aria-haspopup="true"><a href="#" class="sub-icon"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M6 20h12V10H6v10zm6-7c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z" opacity=".3"/><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/></svg> Custom <i class="fe fe-chevron-down horizontal-icon"></i></a>
+      									<ul class="sub-menu">
+      										<li aria-haspopup="true"><a href="signin.html" class="slide-item">Sign In</a></li>
+      										<li aria-haspopup="true"><a href="signup.html" class="slide-item">Sign Up</a></li>
+      										<li aria-haspopup="true"><a href="forgot.html" class="slide-item">Forgot Password</a></li>
+      										<li aria-haspopup="true"><a href="reset.html" class="slide-item">Reset Password</a></li>
+      										<li aria-haspopup="true"><a href="lockscreen.html" class="slide-item">Lock screen</a></li>
+      										<li aria-haspopup="true"><a href="underconstruction.html" class="slide-item">UnderConstruction</a></li>
+      										<li aria-haspopup="true"><a href="404.html" class="slide-item">404 Error</a></li>
+      										<li aria-haspopup="true"><a href="500.html" class="slide-item">500 Error</a></li>
+      									</ul>
+      								</li>
+      							</ul>
+      						</nav>
+      						<!--Nav-->
+      					</div>
+      				</div>
+      			</div>
+      			<!--Horizontal-main -->
+			<!-- main-content opened -->
+			<div class="main-content horizontal-content">
+
+				<!-- container opened -->
+				<div class="container">
+
+					<!-- breadcrumb -->
+					<div class="breadcrumb-header justify-content-between">
+						<div class="left-content">
+							<div>
+							  <h2 class="main-content-title tx-24 mg-b-1 mg-b-lg-1">Hi, welcome back!</h2>
+							  <p class="mg-b-0">Sales monitoring dashboard template.</p>
+							</div>
+						</div>
+						<div class="main-dashboard-header-right">
+							<div>
+								<label class="tx-13">Customer Ratings</label>
+								<div class="main-star">
+									<i class="typcn typcn-star active"></i> <i class="typcn typcn-star active"></i> <i class="typcn typcn-star active"></i> <i class="typcn typcn-star active"></i> <i class="typcn typcn-star"></i> <span>(14,873)</span>
+								</div>
+							</div>
+							<div>
+								<label class="tx-13">Online Sales</label>
+								<h5>563,275</h5>
+							</div>
+							<div>
+								<label class="tx-13">Offline Sales</label>
+								<h5>783,675</h5>
+							</div>
+						</div>
+					</div>
+					<!-- /breadcrumb -->
+
+					<div class="row">
+            <svg id="e7d62c2c-c7a6-4c77-8f5c-a3fe0c7ac473" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1062" height="794.36" viewBox="0 0 1062 794.36"><defs><linearGradient id="85112d37-9806-4565-a0ea-8879143619cd" x1="643.38" y1="527.87" x2="643.38" y2="439.13" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="gray" stop-opacity="0.25"/><stop offset="0.54" stop-color="gray" stop-opacity="0.12"/><stop offset="1" stop-color="gray" stop-opacity="0.1"/></linearGradient><linearGradient id="df208e3c-a3f5-4fc2-8354-a8814a1a7545" x1="601.44" y1="846.53" x2="601.44" y2="825.32" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/><linearGradient id="f31dc2d4-0d93-40f6-a24d-a9bceb1557a5" x1="567.25" y1="842.29" x2="567.25" y2="821.08" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/><linearGradient id="f0ebc0e0-65f1-47cb-b776-261c995964f9" x1="561.22" y1="836.11" x2="561.22" y2="827.95" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/><linearGradient id="93f025d2-5adc-499b-9d9a-f633acaed05b" x1="597.88" y1="835.38" x2="597.88" y2="826.89" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/><linearGradient id="7be7b514-f490-43c2-8f6f-9e415e928302" x1="584.67" y1="835.03" x2="584.67" y2="620.5" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/><linearGradient id="33a20f31-fcc2-4a92-ab49-195e19cfaaaa" x1="599.49" y1="728.89" x2="599.49" y2="728.32" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/><linearGradient id="de6a0646-a91b-46a0-9afb-f46952816772" x1="600.1" y1="734.92" x2="600.1" y2="733.61" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/><linearGradient id="04d37134-577c-4403-8fe6-8ed7eba6d70a" x1="562.27" y1="733.65" x2="562.27" y2="731.44" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/><linearGradient id="8776c570-d85f-4376-8246-d2602742eda7" x1="542.46" y1="629.42" x2="542.46" y2="579.01" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/><linearGradient id="6e2a29df-8464-4633-8e1b-f9ea2b2d5fc1" x1="522.24" y1="440.19" x2="522.24" y2="398.37" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/><linearGradient id="e33e2ef7-473f-4cd6-b28c-ecb98abedfac" x1="587.13" y1="513.38" x2="587.13" y2="481.17" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/><linearGradient id="f5b9f2bb-2c0e-46fc-9c28-4202a4412ecd" x1="584.99" y1="635.45" x2="584.99" y2="620.5" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/><linearGradient id="f29e8a79-8a58-4993-a70a-b992b7a832bd" x1="582.84" y1="633.82" x2="582.84" y2="496.72" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/><linearGradient id="c04eac17-4773-4368-bae0-7265c9e76607" x1="540.32" y1="582.71" x2="540.32" y2="532.75" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/><linearGradient id="3c970590-dd1c-4631-9f7e-f9b23acb9d2d" x1="540.3" y1="582.71" x2="540.3" y2="572.18" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/><linearGradient id="cab065ab-ef79-48f8-9c0a-09d4e188359a" x1="581.11" y1="582.41" x2="581.11" y2="570.86" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/><linearGradient id="d718cee3-9c00-4171-a05a-14de0f48f667" x1="609.77" y1="606.98" x2="609.77" y2="588.96" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/><linearGradient id="8f995e39-4892-4832-8cdc-33159eeee44f" x1="567.9" y1="608.02" x2="567.9" y2="605.46" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/><linearGradient id="ba1bc673-7a43-4daf-b3ca-7287eecc4ed3" x1="604.87" y1="541.68" x2="604.87" y2="524.88" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/><linearGradient id="d005e3fc-d6fe-48e9-9aec-3eb63feaa3ce" x1="544.43" y1="525.13" x2="544.43" y2="513.92" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/><linearGradient id="8f44d692-9086-4f84-9d84-a3a660414f29" x1="538.8" y1="564.15" x2="538.8" y2="557.55" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/><linearGradient id="34b8f87b-81de-41c4-ae6e-1a72ec4cce6a" x1="539.06" y1="552.57" x2="539.06" y2="547.23" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/><linearGradient id="aa860263-0dba-4287-a003-5e39ffdf9739" x1="603.19" y1="655.98" x2="603.19" y2="652.51" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/><linearGradient id="b0bcbe2d-d614-49a6-948e-a79a535d5283" x1="565.55" y1="657.11" x2="565.55" y2="654.23" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/><linearGradient id="1ff6b976-6854-4bdb-b047-1feedf56385b" x1="599.22" y1="663.17" x2="599.22" y2="662.83" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/><linearGradient id="4cf659f5-9d55-4c93-bc8b-15c9a9403b0a" x1="558.65" y1="671.73" x2="558.65" y2="667.08" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/><linearGradient id="ddaf5e28-e506-4c9e-ad2d-295c8c59bc2c" x1="582.1" y1="584.56" x2="582.1" y2="434.29" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/><linearGradient id="ba62206a-581b-4ba2-9912-7589baa777ba" x1="542.98" y1="501.81" x2="542.98" y2="477.61" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/><linearGradient id="1d302a68-2b53-4616-82c0-9d32bf7b435e" x1="547.17" y1="562.43" x2="547.17" y2="534.56" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/><linearGradient id="0da18ff1-7e19-420b-8354-a9457e98fcb1" x1="581.02" y1="584.83" x2="581.02" y2="554.96" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/><linearGradient id="86e6b7f7-4a58-4701-a141-596d9c5da905" x1="618.43" y1="484.19" x2="618.43" y2="462.35" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/><linearGradient id="3a8eff62-0f79-4f94-b7ff-acb207059ac5" x1="612.82" y1="534.25" x2="612.82" y2="509.77" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/><linearGradient id="f56efedd-ee8b-4d2e-8bf5-876fc33e5faf" x1="638.86" y1="531.3" x2="638.86" y2="507.86" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/><linearGradient id="4176ab9b-a8a4-47bf-bcab-5d6531458a22" x1="647.52" y1="531.06" x2="647.52" y2="508.4" xlink:href="#85112d37-9806-4565-a0ea-8879143619cd"/></defs><title>setup wizard</title><path d="M674.87,164.22c-64.72-2.24-126.36-23.14-185.22-46S372.49,70,309.32,57.93c-40.63-7.8-87.1-8.9-119.83,12.89C158,91.78,147.8,128,142.33,161.54c-4.12,25.26-6.54,51.85,4.74,75.5,7.84,16.42,21.74,30.22,31.36,45.94,33.47,54.73,9.81,122.21-26.45,175.64-17,25.06-36.75,49-49.88,75.65s-19.2,57.25-7.71,84.47c11.38,27,38.51,47.24,67.9,61.49,59.69,28.95,130,37.23,198.61,41.93,151.83,10.38,304.46,5.89,456.69,1.38,56.34-1.66,112.92-3.35,168.34-12.06,30.78-4.84,62.55-12.52,84.9-31.06,28.36-23.53,35.39-63.37,16.38-92.88-31.88-49.49-120-61.78-142.31-114.89-12.26-29.24.33-61.8,18.16-88.91,38.24-58.17,102.33-109.2,105.7-175.68,2.32-45.66-28.49-91.39-76.13-113-49.93-22.65-119.18-19.8-156,17.68C798.68,151.35,732,166.21,674.87,164.22Z" transform="translate(-69 -52.82)" fill="#00cccc" opacity="0.1"/><rect y="123.48" width="259.51" height="259.51" fill="#e8e9ed"/><rect x="802.49" y="123.48" width="259.51" height="259.51" fill="#e8e9ed"/><path d="M214.39,84.85,211.8,82.2a.54.54,0,0,0-.41-.18.52.52,0,0,0-.41.18l-17.9,18-6.52-6.51a.56.56,0,0,0-.82,0l-2.61,2.61a.58.58,0,0,0,0,.84l8.22,8.21a2.57,2.57,0,0,0,1.71.84,2.72,2.72,0,0,0,1.71-.81h0L214.4,85.69a.63.63,0,0,0,0-.84Z" transform="translate(-69 -52.82)" fill="#3acc6c" opacity="0.5"/><path d="M198.75,67.7a26.39,26.39,0,1,1-18.68,7.73,26.25,26.25,0,0,1,18.68-7.73m0-4.11a30.53,30.53,0,1,0,30.53,30.52A30.51,30.51,0,0,0,198.75,63.59Z" transform="translate(-69 -52.82)" fill="#00cccc" opacity="0.5"/><path d="M414.82,170.18l-3.26-3.34a.68.68,0,0,0-.51-.22.66.66,0,0,0-.52.22L388,189.54l-8.21-8.2a.7.7,0,0,0-.51-.22.72.72,0,0,0-.52.22l-3.29,3.29a.72.72,0,0,0,0,1.05L385.81,196a3.24,3.24,0,0,0,2.16,1.05,3.43,3.43,0,0,0,2.14-1h0l24.7-24.84a.79.79,0,0,0,0-1Z" transform="translate(-69 -52.82)" fill="#3acc6c" opacity="0.8"/><path d="M395.12,148.58a33.25,33.25,0,1,1-23.52,9.74,33,33,0,0,1,23.52-9.74m0-5.17a38.43,38.43,0,1,0,38.43,38.43A38.42,38.42,0,0,0,395.12,143.41Z" transform="translate(-69 -52.82)" fill="#00cccc" opacity="0.8"/><path d="M1001.24,67.7a26.39,26.39,0,1,1-18.68,7.73,26.25,26.25,0,0,1,18.68-7.73m0-4.11a30.53,30.53,0,1,0,30.53,30.52A30.51,30.51,0,0,0,1001.24,63.59Z" transform="translate(-69 -52.82)" fill="#00cccc" opacity="0.5"/><path d="M803.47,148.58A33.25,33.25,0,1,1,780,158.32a33.06,33.06,0,0,1,23.52-9.74m0-5.17a38.43,38.43,0,1,0,38.43,38.43A38.42,38.42,0,0,0,803.47,143.41Z" transform="translate(-69 -52.82)" fill="#00cccc" opacity="0.8"/><path d="M598.33,209.56a43.94,43.94,0,1,1-31.1,12.87,43.67,43.67,0,0,1,31.1-12.87m0-6.84a50.81,50.81,0,1,0,50.81,50.81A50.8,50.8,0,0,0,598.33,202.72Z" transform="translate(-69 -52.82)" fill="#00cccc"/><rect x="181.52" y="191.5" width="289.2" height="289.2" fill="#f3f5f7"/><rect x="589.87" y="191.5" width="289.2" height="289.2" fill="#f3f5f7"/><rect x="25.93" y="169.55" width="96.46" height="10.72" opacity="0.1"/><rect x="849.19" y="169.55" width="96.46" height="10.72" opacity="0.1"/><path d="M770.19,671.23s25.06-44.39,62.8-57.18a77.23,77.23,0,0,0,39.12-29.26A130.64,130.64,0,0,0,883.65,564" transform="translate(-69 -52.82)" fill="none" stroke="#535461" stroke-miterlimit="10" stroke-width="2"/><path d="M907.38,555.83c-4.3,4.17-24.33,8.49-24.33,8.49s4.92-19.89,9.22-24.07a10.85,10.85,0,0,1,15.11,15.58Z" transform="translate(-69 -52.82)" fill="#00cccc"/><path d="M896.05,591.81c-5.88,1.17-25-6.09-25-6.09s14.93-14,20.81-15.19a10.85,10.85,0,0,1,4.22,21.28Z" transform="translate(-69 -52.82)" fill="#00cccc"/><path d="M854.8,630.76c-5.66-2-18.53-17.9-18.53-17.9s20-4.57,25.63-2.61a10.85,10.85,0,0,1-7.1,20.51Z" transform="translate(-69 -52.82)" fill="#00cccc"/><path d="M817,653.19c-5.92-1-21.3-14.51-21.3-14.51s18.92-7.87,24.83-6.9A10.85,10.85,0,1,1,817,653.19Z" transform="translate(-69 -52.82)" fill="#00cccc"/><path d="M854.32,570.18c0,6,10.84,23.37,10.84,23.37S876,576.18,876,570.19a10.85,10.85,0,1,0-21.7,0Z" transform="translate(-69 -52.82)" fill="#00cccc"/><path d="M810.39,597c1.79,5.72,17.34,19.06,17.34,19.06s5.16-19.82,3.37-25.54A10.85,10.85,0,1,0,810.39,597Z" transform="translate(-69 -52.82)" fill="#00cccc"/><path d="M771.27,628.89c.8,5.94,13.86,21.71,13.86,21.71s8.44-18.66,7.65-24.6a10.85,10.85,0,0,0-21.51,2.89Z" transform="translate(-69 -52.82)" fill="#00cccc"/><path d="M907.38,555.83c-4.3,4.17-24.33,8.49-24.33,8.49s4.92-19.89,9.22-24.07a10.85,10.85,0,0,1,15.11,15.58Z" transform="translate(-69 -52.82)" opacity="0.25"/><path d="M896.05,591.81c-5.88,1.17-25-6.09-25-6.09s14.93-14,20.81-15.19a10.85,10.85,0,0,1,4.22,21.28Z" transform="translate(-69 -52.82)" opacity="0.25"/><path d="M854.8,630.76c-5.66-2-18.53-17.9-18.53-17.9s20-4.57,25.63-2.61a10.85,10.85,0,0,1-7.1,20.51Z" transform="translate(-69 -52.82)" opacity="0.25"/><path d="M817,653.19c-5.92-1-21.3-14.51-21.3-14.51s18.92-7.87,24.83-6.9A10.85,10.85,0,1,1,817,653.19Z" transform="translate(-69 -52.82)" opacity="0.25"/><path d="M854.32,570.18c0,6,10.84,23.37,10.84,23.37S876,576.18,876,570.19a10.85,10.85,0,1,0-21.7,0Z" transform="translate(-69 -52.82)" opacity="0.25"/><path d="M810.39,597c1.79,5.72,17.34,19.06,17.34,19.06s5.16-19.82,3.37-25.54A10.85,10.85,0,1,0,810.39,597Z" transform="translate(-69 -52.82)" opacity="0.25"/><path d="M771.27,628.89c.8,5.94,13.86,21.71,13.86,21.71s8.44-18.66,7.65-24.6a10.85,10.85,0,0,0-21.51,2.89Z" transform="translate(-69 -52.82)" opacity="0.25"/><path d="M771.63,670.35s4.93-50.73,34.24-77.72A77.32,77.32,0,0,0,829.78,550a130.28,130.28,0,0,0,2.13-23.66" transform="translate(-69 -52.82)" fill="none" stroke="#535461" stroke-miterlimit="10" stroke-width="2"/><path d="M850.29,509.25c-2.24,5.56-18.8,17.62-18.8,17.62s-3.57-20.17-1.33-25.73a10.85,10.85,0,0,1,20.13,8.11Z" transform="translate(-69 -52.82)" fill="#00cccc"/><path d="M854.51,546.74c-4.9,3.45-25.35,4.58-25.35,4.58s8-18.88,12.87-22.32a10.85,10.85,0,0,1,12.48,17.74Z" transform="translate(-69 -52.82)" fill="#00cccc"/><path d="M832.58,599.06c-6,.5-24.19-8.85-24.19-8.85s16.4-12.27,22.37-12.77a10.85,10.85,0,1,1,1.82,21.62Z" transform="translate(-69 -52.82)" fill="#00cccc"/><path d="M807.08,634.91c-5.81,1.5-25.35-4.64-25.35-4.64s14.1-14.86,19.9-16.37a10.85,10.85,0,0,1,5.45,21Z" transform="translate(-69 -52.82)" fill="#00cccc"/><path d="M807.59,543.88c2.43,5.48,19.38,17,19.38,17s2.89-20.28.47-25.76a10.85,10.85,0,0,0-19.85,8.79Z" transform="translate(-69 -52.82)" fill="#00cccc"/><path d="M778.29,586.18c4,4.5,23.58,10.4,23.58,10.4s-3.32-20.22-7.27-24.72a10.85,10.85,0,0,0-16.31,14.32Z" transform="translate(-69 -52.82)" fill="#00cccc"/><path d="M755.46,631.2c3.13,5.11,21.47,14.24,21.47,14.24s.16-20.49-3-25.6a10.85,10.85,0,0,0-18.49,11.36Z" transform="translate(-69 -52.82)" fill="#00cccc"/><rect x="218.85" y="253.23" width="96.46" height="10.72" opacity="0.1"/><rect x="396.6" y="347.46" width="57.59" height="10.72" opacity="0.1"/><rect x="396.6" y="419.4" width="85.28" height="10.72" opacity="0.1"/><rect x="218.85" y="291.01" width="96.46" height="10.72" opacity="0.1"/><rect x="652.92" y="253.23" width="96.46" height="10.72" opacity="0.1"/><rect x="652.92" y="291.01" width="96.46" height="10.72" opacity="0.1"/><path d="M584.66,268.47l2.7-3.54a14,14,0,0,0,9.72,4c4.56,0,7.94-2.23,7.94-5.84,0-3.92-3.24-6.5-12.22-6.5v-4.07c8,0,11-2.63,11-6.1,0-3.14-2.69-5.1-6.68-5.1a12.86,12.86,0,0,0-8.36,3.42l-2.87-3.42a17.49,17.49,0,0,1,11.45-4.45c6.91,0,12,3.32,12,9.14,0,4.1-3,6.78-7.32,8.26v.22c4.63,1,8.51,4.07,8.51,8.86,0,6.32-6,10.11-13.08,10.11C591.43,273.45,587.3,271.16,584.66,268.47Z" transform="translate(-69 -52.82)" fill="#00cccc"/><g opacity="0.8"><path d="M806.66,176.32c0-1.92.17-4.37.27-6.29h-.25c-1.1,1.7-2.35,3.39-3.47,5.08l-8,10.26h21.24v4.13H789.73V186l15.95-21h5.87v33.39h-4.89Z" transform="translate(-69 -52.82)" fill="#00cccc"/></g><g opacity="0.5"><path d="M990.85,104.7l1.81-2.47a9.41,9.41,0,0,0,6.55,2.69c3.22,0,5.75-1.92,5.75-5.07S1002.73,95,999.42,95a8.47,8.47,0,0,0-4.72,1.39l-1.88-1.21.76-11.81h14v3.25h-10.7l-.59,6.47a9.84,9.84,0,0,1,4.15-.88c4.59,0,8.33,2.36,8.33,7.58s-4.38,8.27-9.11,8.27A12.29,12.29,0,0,1,990.85,104.7Z" transform="translate(-69 -52.82)" fill="#00cccc"/></g><rect x="347.16" y="283.32" width="357.49" height="357.49" fill="#00cccc" opacity="0.1"/><rect x="359.16" y="266.32" width="357.49" height="357.49" fill="#fff"/><rect x="396.6" y="305.92" width="282.6" height="10.72" fill="#00cccc" opacity="0.5"/><rect x="396.6" y="383.43" width="179.95" height="10.72" opacity="0.1"/><rect x="396.6" y="455.38" width="174.6" height="10.72" opacity="0.1"/><rect x="396.6" y="491.35" width="238.01" height="10.72" opacity="0.1"/><path d="M696.52,437.2l-1.23-1.27a.3.3,0,0,0-.2-.08.27.27,0,0,0-.19.08l-8.53,8.6-3.11-3.11a.32.32,0,0,0-.2-.08.29.29,0,0,0-.19.08l-1.25,1.25a.28.28,0,0,0,0,.4l3.92,3.91a1.25,1.25,0,0,0,.82.4,1.26,1.26,0,0,0,.81-.39h0l9.35-9.39a.32.32,0,0,0,0-.4Z" transform="translate(-69 -52.82)" fill="#3acc6c" opacity="0.5"/><path d="M689.07,429a12.6,12.6,0,1,1-8.9,3.69,12.5,12.5,0,0,1,8.9-3.69m0-1.95a14.55,14.55,0,1,0,14.54,14.54A14.54,14.54,0,0,0,689.07,427.07Z" transform="translate(-69 -52.82)" fill="#3acc6c" opacity="0.5"/><path d="M696.52,509.14l-1.23-1.26a.26.26,0,0,0-.2-.08.24.24,0,0,0-.19.08l-8.53,8.59-3.11-3.1a.28.28,0,0,0-.2-.09.26.26,0,0,0-.19.09l-1.25,1.24a.28.28,0,0,0,0,.4l3.92,3.92a1.25,1.25,0,0,0,.82.4,1.31,1.31,0,0,0,.81-.39h0l9.35-9.4a.32.32,0,0,0,0-.4Z" transform="translate(-69 -52.82)" fill="#3acc6c" opacity="0.5"/><path d="M689.07,501a12.6,12.6,0,1,1-8.9,3.69,12.5,12.5,0,0,1,8.9-3.69m0-2a14.55,14.55,0,1,0,14.54,14.55A14.54,14.54,0,0,0,689.07,499Z" transform="translate(-69 -52.82)" fill="#3acc6c" opacity="0.5"/><ellipse cx="512.51" cy="782.38" rx="71.41" ry="11.98" fill="#00cccc" opacity="0.1"/><path d="M199.91,746.19s3.72,4.87-1.72,12.23-9.94,13.56-8.12,18.15c0,0,8.21-13.66,14.9-13.85S207.26,754.41,199.91,746.19Z" transform="translate(-69 -52.82)" fill="#00cccc"/><path d="M199.91,746.19a6.09,6.09,0,0,1,.76,1.53c6.52,7.67,10,14.82,3.73,15-5.84.17-12.85,10.61-14.53,13.25a4.69,4.69,0,0,0,.2.6s8.21-13.66,14.9-13.85S207.26,754.41,199.91,746.19Z" transform="translate(-69 -52.82)" opacity="0.1"/><path d="M206.83,752.4c0,1.72-.19,3.11-.43,3.11s-.43-1.39-.43-3.11.24-.91.48-.91S206.83,750.69,206.83,752.4Z" transform="translate(-69 -52.82)" fill="#ffd037"/><path d="M209.21,754.45c-1.51.82-2.82,1.32-2.93,1.11s1-1,2.52-1.87.91-.22,1,0S210.71,753.63,209.21,754.45Z" transform="translate(-69 -52.82)" fill="#ffd037"/><path d="M180.23,746.19s-3.73,4.87,1.72,12.23,9.93,13.56,8.12,18.15c0,0-8.22-13.66-14.9-13.85S172.87,754.41,180.23,746.19Z" transform="translate(-69 -52.82)" fill="#00cccc"/><path d="M180.23,746.19a6.09,6.09,0,0,0-.76,1.53c-6.53,7.67-10,14.82-3.73,15,5.84.17,12.85,10.61,14.53,13.25-.06.2-.12.4-.2.6,0,0-8.22-13.66-14.9-13.85S172.87,754.41,180.23,746.19Z" transform="translate(-69 -52.82)" opacity="0.1"/><path d="M173.3,752.4c0,1.72.19,3.11.43,3.11s.43-1.39.43-3.11-.24-.91-.48-.91S173.3,750.69,173.3,752.4Z" transform="translate(-69 -52.82)" fill="#ffd037"/><path d="M170.93,754.45c1.5.82,2.81,1.32,2.93,1.11s-1-1-2.52-1.87-.91-.22-1,0S169.42,753.63,170.93,754.45Z" transform="translate(-69 -52.82)" fill="#ffd037"/><ellipse cx="121.07" cy="755.04" rx="38.95" ry="5.98" fill="#00cccc" opacity="0.1"/><path d="M210.12,770l-.19,1.53-.26,2.14-.11.9-.26,2.15-.11.9-.27,2.14-3,24.44c-.26,2.18-3.83,3.88-8.13,3.88H182.32c-4.3,0-7.86-1.7-8.12-3.88l-3-24.44-.26-2.14-.11-.9-.26-2.15-.11-.9-.26-2.14L170,770c-.15-1.23,1.78-2.27,4.21-2.27h31.68C208.34,767.73,210.27,768.77,210.12,770Z" transform="translate(-69 -52.82)" fill="#65617d"/><polygon points="140.93 718.7 140.67 720.85 101.47 720.85 101.2 718.7 140.93 718.7" fill="#9d9cb5"/><polygon points="140.56 721.75 140.3 723.9 101.84 723.9 101.58 721.75 140.56 721.75" fill="#9d9cb5"/><polygon points="140.19 724.79 139.92 726.94 102.21 726.94 101.95 724.79 140.19 724.79" fill="#9d9cb5"/><path d="M659.84,514.61c-.67-1.37-6-19-6-19l-10.27-26.07s-6.23-34.31-15.53-25.75,5,29.1,5,29.1,5.87,15,5.57,18,3.27,14,3.27,14l-1.16,6.32c-1.51-.1-2.49-.1-2.49-.1s-.92,1.32-1.8,1.41a.83.83,0,0,1-.44-.06c-1-.45-4.31-.36-6-.36a13.44,13.44,0,0,1-4.49-1.44c-.58-1.16-3.86-1.85-6.77-2.24-2.21-5.5-5.32-10.85-5.75-16.59a7.17,7.17,0,0,1,.88-4.52,5.65,5.65,0,0,1,.66-.82c.81-.82,1.8-1.54,2.7-2.3.45-.38.86-.77,1.25-1.17,7.63-7.4,6.42-18.86-.5-26.79-8-9.17-44.08-28.9-55-12-1.52,2.36-1.57,5.09-2,7.71a32.14,32.14,0,0,1-8.62,17c-3.62,3.85-8.37,7.4-10.45,11.76l-.07-.16a11.65,11.65,0,0,0-1.08,3c-1.05,5.31,2.53,10.42,4.41,15.59a28,28,0,0,1,1.38,5.42l.12-1.14a35.22,35.22,0,0,1,.47,8c-13.1,2.68-13.11,25.26-13.11,25.26s-1.61,9-1.34,12.21.27,10.23.27,11.94-1.62,12.21-1.8,13.47a.11.11,0,0,1,0,0c-.23,1.39-2.69,8.05,3.25,9.55.41.11.85.2,1.3.28.25,5.39.72,16.7.31,19.2,0,0,2.16,15.18,3.95,19a45.06,45.06,0,0,0,4,6.45,7,7,0,0,1-.91,2.61c-.91,1.33-.44,2.42,1.09,2.89q-.07.69-.18,1.56c-.65,5.86-1.63,17.49,0,23.39,2.29,8.08,2.42,10.77,2.42,10.77a8,8,0,0,0,.94,3.77c1,1.35,2.7,13.87,2.7,15.89s4.58,20.2,3.23,24.51-.27,10.37-.27,10.37-.81,10.64-1.75,12.93-1.35,39.19.13,48.75,2.43,17.51,2.43,17.51-1,8.75-.14,10,2.29,8.49,1.21,8.89-1.61,3.37-1.61,3.37a29.63,29.63,0,0,0,1.84,2.51,10.16,10.16,0,0,1-1.22-.52c.43.61,1.07,1.45,1.85,2.37l-.73,9.68a1.62,1.62,0,0,0,1.2,1.7,13.44,13.44,0,0,0,13.38-3.79c6.73-6.87,9-5.92,10.24-10.1.12-.45.24-.88.33-1.3a4.37,4.37,0,0,0-6.19-4.9c.43-3,.77-6.29.44-8.18-.67-3.9-.54-14.14-.54-14.14l-.94-49s1.75-9.69,3.77-13.46,1.75-17,1.75-17l2.29-43.37L583,655.48s2.15-7.27,4.84.81c0,0-1.48,16.29-.8,20.2s1.61,22.89.94,27.07-3.64,27.07-1.75,32.86,3.9,12.79,3.5,15.08-1.75,52-1.75,52,3.63,9.56.94,12.66-.13,15.49-.13,15.49.32.23.88.56l-.08,1-.84,11.14a1.63,1.63,0,0,0,1.2,1.7,13.46,13.46,0,0,0,13.38-3.79c6.73-6.87,9-5.93,10.24-10.1.12-.45.24-.89.34-1.31a4.38,4.38,0,0,0-7.06-4.35.93.93,0,0,1-.15.13c-.17.15-.35.28-.53.41l-.26.17c.67-3.08,1.65-8.33,1.19-10.81-.67-3.64.67-14.68.67-14.68s3.91-13.2,4-18.45,1.08-42,1.08-42-.13-17.1.41-21.27,4.84-40.27,9.15-51c3.31-8.26,4.79-29.31,3.91-40-.05-.54-.1-1-.15-1.52C631.44,623.52,632,617,632,617s-4.85-9.34-9.52-13.29-5.75-10.77-5.57-13.65a7.09,7.09,0,0,0-1.61-4.84s-2.16-7-3.6-7.72a1,1,0,0,1-.31-.24c-1-1.06-.23-4.07-.23-4.07l0-.09c.16-.7,1.21-5.22.87-6.38s.18-7.18.18-7.18,3.42-10.23,2.88-18.31,7-7.37,7-7.37l23.29-.24,2.65,0a19.52,19.52,0,0,0,3-3.21,6.42,6.42,0,0,0,5.15-1.26C661.12,524.63,660.51,516,659.84,514.61Zm-108.31,70,.17-4.1.91.78a6.56,6.56,0,0,1,0,3.28,3.5,3.5,0,0,1-2,2.28,2.23,2.23,0,0,0-.33.2l-.23-2.34C551,584.65,551.53,584.6,551.53,584.6Z" transform="translate(-69 -52.82)" opacity="0.1"/><path d="M638.9,522.56s13.26,8.53,18.28,4,4.4-13.27,3.72-14.65-6.08-19.13-6.08-19.13l-10.43-26.28s-6.34-34.59-15.8-26,5.1,29.33,5.1,29.33,6,15.13,5.66,18.16,3.32,14.13,3.32,14.13Z" transform="translate(-69 -52.82)" fill="url(#85112d37-9806-4565-a0ea-8879143619cd)"/><path d="M614.17,830.73c-.1.43-.21.87-.35,1.32-1.23,4.21-3.56,3.26-10.4,10.18a13.73,13.73,0,0,1-13.6,3.82,1.64,1.64,0,0,1-1.22-1.71l.86-11.23.41-5.41s10.89,3.06,16.44-.81c.18-.13.36-.26.53-.41l.16-.13A4.45,4.45,0,0,1,614.17,830.73Z" transform="translate(-69 -52.82)" fill="url(#df208e3c-a3f5-4fc2-8354-a8814a1a7545)"/><path d="M580,826.49c-.09.43-.21.87-.34,1.32-1.23,4.21-3.56,3.26-10.4,10.18a13.77,13.77,0,0,1-13.6,3.83,1.63,1.63,0,0,1-1.22-1.72l.85-11.23.42-5.41s10.89,3.06,16.43-.81c.19-.13.36-.26.54-.41l.16-.13A4.44,4.44,0,0,1,580,826.49Z" transform="translate(-69 -52.82)" fill="url(#f31dc2d4-0d93-40f6-a24d-a9bceb1557a5)"/><g opacity="0.1"><path d="M568.72,828.18l.45,5.83c-6.26,6.2-13.7-3-15.9-6.06C559,830.89,568.72,828.18,568.72,828.18Z" transform="translate(-69 -52.82)" fill="url(#f0ebc0e0-65f1-47cb-b776-261c995964f9)"/></g><g opacity="0.1"><path d="M605.47,830.55l.83-.54c-5.72,8.62-14.2,4.64-16.84,3.1l.41-5.41s10.89,3.06,16.44-.81C605.87,829,605.47,830.55,605.47,830.55Z" transform="translate(-69 -52.82)" fill="url(#93f025d2-5adc-499b-9d9a-f633acaed05b)"/></g><path d="M622.86,667.49c-4.38,10.86-8.76,47.25-9.31,51.46s-.41,21.45-.41,21.45L612,782.76c-.13,5.3-4.1,18.6-4.1,18.6s-1.37,11.14-.69,14.8-1.78,13.31-1.78,13.31l.83-.54c-6.85,10.31-17.66,2.57-17.66,2.57s-2.6-12.49.13-15.61-.95-12.76-.95-12.76,1.36-50.1,1.78-52.41S588,741.35,586,735.51s1.09-28.92,1.78-33.13-.28-23.35-1-27.29.82-20.37.82-20.37c-2.74-8.14-4.93-.81-4.93-.81l-2.19,21.32L578.23,719s.28,13.3-1.78,17.1-3.83,13.58-3.83,13.58l1,49.42s-.14,10.32.55,14.26-1.51,14.12-1.51,14.12c-7.66,17.92-20-1.49-20-1.49s.54-3,1.64-3.4-.41-7.74-1.23-9,.13-10,.13-10-.95-8-2.46-17.66-1.09-46.84-.14-49.15,1.78-13,1.78-13-1.09-6.11.28-10.46-3.29-22.67-3.29-24.71-1.78-14.66-2.74-16a8,8,0,0,1-1-3.8s-.14-2.72-2.47-10.86c-1.7-6-.7-17.68,0-23.58.24-2.19.44-3.58.44-3.58s78.57-12.63,81.72-9.77c.74.66,1.23,3,1.51,6.26C627.72,637.94,626.21,659.17,622.86,667.49Z" transform="translate(-69 -52.82)" fill="url(#7be7b514-f490-43c2-8f6f-9e415e928302)"/><g opacity="0.1"><path d="M593.15,728.54c.37,0,9,.73,12.23.09S593.15,728.54,593.15,728.54Z" transform="translate(-69 -52.82)" fill="url(#33a20f31-fcc2-4a92-ab49-195e19cfaaaa)"/></g><g opacity="0.1"><path d="M593.79,733.61s12,2.08,12.6,1S593.79,733.61,593.79,733.61Z" transform="translate(-69 -52.82)" fill="url(#de6a0646-a91b-46a0-9afb-f46952816772)"/></g><g opacity="0.1"><path d="M557.2,731.44s6.2.27,9.58,1.81S557.2,731.44,557.2,731.44Z" transform="translate(-69 -52.82)" fill="url(#04d37134-577c-4403-8fe6-8ed7eba6d70a)"/></g><path d="M534.66,579.19s1,18.92.46,22.26c0,0,2.19,15.3,4,19.19a55.12,55.12,0,0,0,5.75,8.78l5.38-37.56L549,579Z" transform="translate(-69 -52.82)" fill="url(#8776c570-d85f-4376-8246-d2602742eda7)"/><ellipse cx="522.24" cy="419.28" rx="21.08" ry="20.91" fill="url(#6e2a29df-8464-4633-8e1b-f9ea2b2d5fc1)"/><path d="M580.29,481.88s-6.57,12.76-13.14,18.74,39.42,12.76,40.51,12.76-8.21-27.15-6.57-30.41S580.29,481.88,580.29,481.88Z" transform="translate(-69 -52.82)" fill="url(#e33e2ef7-473f-4cd6-b28c-ecb98abedfac)"/><g opacity="0.1"><path d="M626.83,627.18a13.66,13.66,0,0,1-3.38,1.88c-8.39,3.26-17.52,7.79-23.73,6s-19.34,0-19.34,0-26.47-2.18-31.76-.91a10.26,10.26,0,0,1-5.46.14c.24-2.19.44-3.58.44-3.58s78.57-12.63,81.72-9.77C626.06,621.58,626.55,623.89,626.83,627.18Z" transform="translate(-69 -52.82)" fill="url(#f5b9f2bb-2c0e-46fc-9c28-4202a4412ecd)"/></g><path d="M632.58,615.12s-.73,9-9.13,12.31-17.52,7.79-23.73,6-19.34,0-19.34,0-26.47-2.18-31.76-.91-8-.36-6.39-2.72,1.47-10.13,1.47-13.39-1.83-16.48-.19-18.83,3.1-11.4,6.39-12.85a3.55,3.55,0,0,0,2.05-2.3,6.47,6.47,0,0,0,0-3.31s-.55-.45-1.32-1.13c-1.93-1.71-5.21-4.89-4.16-5.93,1.46-1.45,0-10.87,0-10.87s-3.47-7.24-2.19-9.95-11.13-17-11.13-17,0-24.62,15-25.71c0,0,10.58.37,11.86-4.34s9.67-7.43,9.67-7.43l19.16,4.17s17,3.62,20.08,1.45,5.48,2.89,5.48,2.89,10.58.55,11.68,2.72-3.47,23.35-3.47,23.35-7.67-.72-7.12,7.43-2.92,18.46-2.92,18.46-.55,6-.18,7.24-.72,5.72-.89,6.43l0,.09s-.76,3,.23,4.11a1.49,1.49,0,0,0,.32.24c1.46.72,3.65,7.78,3.65,7.78a7.13,7.13,0,0,1,1.65,4.89c-.18,2.9.91,9.77,5.65,13.76S632.58,615.12,632.58,615.12Z" transform="translate(-69 -52.82)" fill="url(#f29e8a79-8a58-4993-a70a-b992b7a832bd)"/><path d="M551.17,573.21l0,.77-.34,8.47s-11.22.9-17.34-.64-3.53-8.23-3.29-9.63c0,0,0,0,0,0,.18-1.27,1.82-11.86,1.82-13.58s0-8.78-.27-12,1.37-12.31,1.37-12.31l1.18-1.45,12.87,4.89Z" transform="translate(-69 -52.82)" fill="url(#c04eac17-4773-4368-bae0-7265c9e76607)"/><g opacity="0.1"><path d="M551.15,574l-.34,8.47s-11.22.9-17.34-.64-3.53-8.23-3.29-9.63Z" transform="translate(-69 -52.82)" fill="url(#3c970590-dd1c-4631-9f7e-f9b23acb9d2d)"/></g><g opacity="0.1"><path d="M552,582.41a6.47,6.47,0,0,0,0-3.31s-.55-.45-1.32-1.13c9.67-1.33,47.94-6.55,60.84-7.11l0,.09s-.76,3,.23,4.11Z" transform="translate(-69 -52.82)" fill="url(#cab065ab-ef79-48f8-9c0a-09d4e188359a)"/></g><g opacity="0.1"><path d="M612.87,589s2.37,13.31-6.48,18C606.39,607,611.41,600.37,612.87,589Z" transform="translate(-69 -52.82)" fill="url(#d718cee3-9c00-4171-a05a-14de0f48f667)"/></g><g opacity="0.1"><path d="M554.92,607.34s21.35-3.62,25.55-.82S554.92,607.34,554.92,607.34Z" transform="translate(-69 -52.82)" fill="url(#8f995e39-4892-4832-8cdc-33159eeee44f)"/></g><g opacity="0.1"><path d="M605.47,524.88s-3.28,13.39-.82,16.47S605.47,524.88,605.47,524.88Z" transform="translate(-69 -52.82)" fill="url(#ba1bc673-7a43-4daf-b3ca-7287eecc4ed3)"/></g><g opacity="0.1"><path d="M543.6,513.92s3,5,1.19,10.14S543.6,513.92,543.6,513.92Z" transform="translate(-69 -52.82)" fill="url(#d005e3fc-d6fe-48e9-9aec-3eb63feaa3ce)"/></g><path d="M537.4,557.55s3.83,2.27,2.55,5.8S537.4,557.55,537.4,557.55Z" transform="translate(-69 -52.82)" fill="url(#8f44d692-9086-4f84-9d84-a3a660414f29)"/><g opacity="0.1"><path d="M537,547.23s3.56,1.91,4,4.71S537,547.23,537,547.23Z" transform="translate(-69 -52.82)" fill="url(#34b8f87b-81de-41c4-ae6e-1a72ec4cce6a)"/></g><g opacity="0.1"><path d="M589.78,655.49s22.36,2.27,26.83-3C616.61,652.51,596.44,656.49,589.78,655.49Z" transform="translate(-69 -52.82)" fill="url(#aa860263-0dba-4287-a003-5e39ffdf9739)"/></g><g opacity="0.1"><path d="M551.18,654.23s24,5.61,28.74,1.17C579.92,655.4,559.3,656.94,551.18,654.23Z" transform="translate(-69 -52.82)" fill="url(#b0bcbe2d-d614-49a6-948e-a79a535d5283)"/></g><g opacity="0.1"><path d="M591.51,662.83s10,0,14.69.27S591.51,662.83,591.51,662.83Z" transform="translate(-69 -52.82)" fill="url(#1ff6b976-6854-4bdb-b047-1feedf56385b)"/></g><g opacity="0.1"><path d="M552.82,667.08s4.93,5.52,10.49,4.53S552.82,667.08,552.82,667.08Z" transform="translate(-69 -52.82)" fill="url(#4cf659f5-9d55-4c93-bc8b-15c9a9403b0a)"/></g><path d="M562.5,441c-1.55,2.38-1.6,5.13-2,7.77a32.32,32.32,0,0,1-8.76,17.19c-4.38,4.62-10.39,8.8-11.52,14.44-1.07,5.36,2.57,10.51,4.48,15.72,5,13.75-2,28.16-4.05,42.35-.56,3.92.12,8.93,5,10.23,1.52.41,3.26.36,4.62,1,1.84.87,2.4,2.68,2.74,4.31a65.67,65.67,0,0,1,1.25,17.73c-.22,3.34-.46,7.17,2.71,9.46a16.13,16.13,0,0,0,5.26,2.08c5,1.34,11.47,2.41,14.84-.72,1.42-1.31,2-3.17,3.71-4.21,2.64-1.55,6.39-.5,9.72-.34a17.65,17.65,0,0,0,15.81-8.42c2.69-4.81,2.46-10.29,1.46-15.47s-2.72-10.3-2.85-15.54a9,9,0,0,1,1.18-5.27c2-3.12,6.77-4.54,10-7,6.06-4.6,6-12.14,3.84-18.45s-6.16-12.34-6.65-18.86a7.16,7.16,0,0,1,.9-4.56,17.78,17.78,0,0,1,3.68-3.42c8.85-7.41,7.81-19.59.49-27.92C610.24,443.83,573.55,423.93,562.5,441Z" transform="translate(-69 -52.82)" fill="url(#ddaf5e28-e506-4c9e-ad2d-295c8c59bc2c)"/><g opacity="0.1"><path d="M545.82,501.81a34.07,34.07,0,0,0-1.39-16.32c-1-2.63-2.37-5.25-3.38-7.88a11.19,11.19,0,0,0-1.1,3c-1.08,5.35,2.57,10.5,4.48,15.72A28.42,28.42,0,0,1,545.82,501.81Z" transform="translate(-69 -52.82)" fill="url(#ba62206a-581b-4ba2-9912-7589baa777ba)"/><path d="M554,561.11a65.3,65.3,0,0,0-1.26-17.73c-.34-1.63-.9-3.44-2.73-4.31-1.37-.65-3.11-.6-4.63-1a6.31,6.31,0,0,1-4.26-3.5c-.27,1.38-.52,2.76-.72,4.13-.57,3.92.11,8.93,5,10.23,1.52.41,3.26.36,4.63,1,1.83.87,2.39,2.68,2.73,4.31a65.14,65.14,0,0,1,1.18,8.19C553.92,562,554,561.55,554,561.11Z" transform="translate(-69 -52.82)" fill="url(#1d302a68-2b53-4616-82c0-9d32bf7b435e)"/><path d="M606,559a17.64,17.64,0,0,1-15.8,8.42c-3.33-.16-7.08-1.21-9.72.34-1.76,1-2.3,2.9-3.71,4.21-3.37,3.13-9.84,2.06-14.84.72a16,16,0,0,1-5.26-2.08,6.46,6.46,0,0,1-2.59-4.18c0,1.86,0,3.73-.12,5.59-.22,3.33-.46,7.16,2.71,9.45a16,16,0,0,0,5.26,2.08c5,1.35,11.47,2.41,14.84-.72,1.41-1.31,2-3.16,3.71-4.2,2.64-1.56,6.39-.51,9.72-.34a17.62,17.62,0,0,0,15.8-8.43c2.59-4.62,2.48-9.86,1.58-14.86A16.18,16.18,0,0,1,606,559Z" transform="translate(-69 -52.82)" fill="url(#0da18ff1-7e19-420b-8354-a9457e98fcb1)"/><path d="M617.59,470.4a17.84,17.84,0,0,0-3.69,3.42,7.17,7.17,0,0,0-.89,4.56,23.57,23.57,0,0,0,1.25,5.81,25,25,0,0,1,3.33-2.93c6-5,7.44-12.2,5.5-18.91A17.37,17.37,0,0,1,617.59,470.4Z" transform="translate(-69 -52.82)" fill="url(#86e6b7f7-4a58-4701-a141-596d9c5da905)"/><path d="M615.82,515.69c-3.24,2.45-8,3.87-10,7a8.93,8.93,0,0,0-1.18,5.27,36.29,36.29,0,0,0,.78,6.3,7.14,7.14,0,0,1,.4-.71c2-3.11,6.76-4.54,10-7,5.53-4.2,6-10.85,4.36-16.78A12.67,12.67,0,0,1,615.82,515.69Z" transform="translate(-69 -52.82)" fill="url(#3a8eff62-0f79-4f94-b7ff-acb207059ac5)"/></g><path d="M657.49,517.91c-3.74,9.41-8.58,13.12-8.58,13.12l-2.69,0-23.68.24-2.74-7.42,3.84-16L626,508a13.7,13.7,0,0,0,4.56,1.45c1.73,0,5.11-.09,6.11.36a.79.79,0,0,0,.45.06c.89-.09,1.84-1.42,1.84-1.42S661.23,508.49,657.49,517.91Z" transform="translate(-69 -52.82)" fill="url(#f56efedd-ee8b-4d2e-8bf5-876fc33e5faf)"/><g opacity="0.1"><path d="M657.49,517.91c-3.74,9.41-8.58,13.12-8.58,13.12l-2.69,0c1.4-3.73,4.36-11.39,5.52-13.15s-8.81-5.84-14.61-8.09c.89-.09,1.84-1.42,1.84-1.42S661.23,508.49,657.49,517.91Z" transform="translate(-69 -52.82)" fill="url(#4176ab9b-a8a4-47bf-bcab-5d6531458a22)"/></g><path d="M638.2,525.2s13,8.46,18,3.94,4.33-13.16,3.66-14.53-6-19-6-19l-10.27-26.07s-6.23-34.31-15.53-25.75,5,29.1,5,29.1,5.87,15,5.57,18,3.27,14,3.27,14Z" transform="translate(-69 -52.82)" fill="#efb7b9"/><path d="M613.87,830.86c-.1.42-.22.86-.34,1.31-1.22,4.17-3.51,3.23-10.24,10.1a13.46,13.46,0,0,1-13.38,3.79,1.63,1.63,0,0,1-1.2-1.7l.84-11.14.41-5.36s10.72,3,16.17-.81c.18-.13.36-.26.53-.41a.93.93,0,0,0,.15-.13A4.38,4.38,0,0,1,613.87,830.86Z" transform="translate(-69 -52.82)" fill="#00cccc"/><path d="M580.22,826.66c-.09.42-.21.85-.33,1.3-1.22,4.18-3.51,3.23-10.24,10.1a13.44,13.44,0,0,1-13.38,3.79,1.62,1.62,0,0,1-1.2-1.7l.84-11.14.41-5.36s10.72,3,16.17-.81a6.14,6.14,0,0,0,.53-.4l.15-.14A4.38,4.38,0,0,1,580.22,826.66Z" transform="translate(-69 -52.82)" fill="#00cccc"/><path d="M569.15,828.33l.44,5.79c-6.15,6.14-13.48-3-15.64-6C559.61,831,569.15,828.33,569.15,828.33Z" transform="translate(-69 -52.82)" opacity="0.1"/><path d="M605.31,830.68l.81-.53c-5.62,8.54-14,4.6-16.57,3.07l.41-5.36s10.72,3,16.17-.81C605.7,829.14,605.31,830.68,605.31,830.68Z" transform="translate(-69 -52.82)" opacity="0.1"/><path d="M622.41,669c-4.31,10.77-8.62,46.86-9.15,51s-.41,21.27-.41,21.27l-1.08,42c-.13,5.25-4,18.45-4,18.45s-1.34,11-.67,14.68-1.75,13.2-1.75,13.2l.81-.54c-6.73,10.23-17.37,2.56-17.37,2.56s-2.56-12.39.13-15.49-.94-12.66-.94-12.66,1.35-49.69,1.75-52-1.62-9.29-3.5-15.08,1.08-28.69,1.75-32.86-.27-23.17-.94-27.07.8-20.2.8-20.2c-2.69-8.08-4.84-.81-4.84-.81l-2.16,21.14L578.51,720s.27,13.19-1.75,17S573,750.42,573,750.42l.94,49s-.13,10.24.54,14.14-1.48,14-1.48,14c-7.54,17.77-19.66-1.48-19.66-1.48s.54-3,1.61-3.37-.4-7.68-1.21-8.89.14-10,.14-10-1-7.95-2.43-17.51-1.07-46.46-.13-48.75,1.75-12.93,1.75-12.93-1.08-6.06.27-10.37-3.23-22.49-3.23-24.51-1.75-14.54-2.7-15.89a8,8,0,0,1-.94-3.77s-.13-2.69-2.42-10.77c-1.67-5.9-.69-17.53,0-23.39.24-2.17.44-3.55.44-3.55s77.3-12.52,80.4-9.69c.72.66,1.21,3,1.48,6.21C627.2,639.64,625.72,660.69,622.41,669Z" transform="translate(-69 -52.82)" fill="#444053"/><path d="M593.19,729.5c.36,0,8.89.72,12,.09S593.19,729.5,593.19,729.5Z" transform="translate(-69 -52.82)" opacity="0.1"/><path d="M593.82,734.53s11.76,2.07,12.39,1S593.82,734.53,593.82,734.53Z" transform="translate(-69 -52.82)" opacity="0.1"/><path d="M557.82,732.38s6.1.27,9.42,1.79S557.82,732.38,557.82,732.38Z" transform="translate(-69 -52.82)" opacity="0.1"/><path d="M535.64,581.37s1,18.76.45,22.08c0,0,2.16,15.18,3.95,19a55.07,55.07,0,0,0,5.66,8.71L551,593.94l-1.25-12.75Z" transform="translate(-69 -52.82)" fill="#efb7b9"/><circle cx="522.31" cy="422.34" r="20.74" fill="#efb7b9"/><path d="M580.53,484.86s-6.46,12.65-12.93,18.58,38.79,12.66,39.87,12.66-8.08-26.94-6.47-30.17S580.53,484.86,580.53,484.86Z" transform="translate(-69 -52.82)" fill="#efb7b9"/><path d="M626.32,629a13.55,13.55,0,0,1-3.32,1.87c-8.26,3.23-17.24,7.72-23.35,5.92s-19,0-19,0-26-2.15-31.24-.9A10.07,10.07,0,0,1,544,636c.24-2.17.44-3.55.44-3.55s77.3-12.52,80.4-9.69C625.56,623.42,626.05,625.71,626.32,629Z" transform="translate(-69 -52.82)" opacity="0.1"/><path d="M632,617s-.72,9-9,12.21-17.24,7.72-23.35,5.93-19,0-19,0-26-2.16-31.24-.9-7.9-.36-6.29-2.7,1.44-10,1.44-13.28-1.8-16.34-.18-18.68,3-11.31,6.29-12.75a3.5,3.5,0,0,0,2-2.28,6.56,6.56,0,0,0,0-3.28s-.54-.45-1.3-1.12c-1.9-1.7-5.12-4.85-4.08-5.88,1.43-1.44,0-10.78,0-10.78s-3.42-7.18-2.16-9.87-11-16.88-11-16.88,0-24.42,14.73-25.5c0,0,10.41.36,11.67-4.31s9.52-7.36,9.52-7.36l18.85,4.13s16.7,3.59,19.75,1.44S614,508,614,508s10.41.54,11.49,2.69-3.41,23.16-3.41,23.16-7.54-.71-7,7.37-2.88,18.31-2.88,18.31-.54,5.93-.18,7.18-.71,5.68-.87,6.38l0,.09s-.74,3,.23,4.07a1,1,0,0,0,.31.24c1.44.71,3.6,7.72,3.6,7.72a7.09,7.09,0,0,1,1.61,4.84c-.18,2.88.9,9.7,5.57,13.65S632,617,632,617Z" transform="translate(-69 -52.82)" fill="#00cccc"/><path d="M551.89,575.44l0,.76-.33,8.4s-11,.9-17-.63-3.48-8.16-3.25-9.55a.11.11,0,0,0,0,0c.18-1.26,1.8-11.77,1.8-13.47s0-8.71-.27-11.94,1.34-12.21,1.34-12.21l1.17-1.44,12.66,4.85Z" transform="translate(-69 -52.82)" fill="#00cccc"/><path d="M551.86,576.2l-.33,8.4s-11,.9-17-.63-3.48-8.16-3.25-9.55Z" transform="translate(-69 -52.82)" opacity="0.1"/><path d="M552.66,584.56a6.56,6.56,0,0,0,0-3.28s-.54-.45-1.3-1.12c9.52-1.32,47.17-6.49,59.86-7l0,.09s-.74,3,.23,4.07Z" transform="translate(-69 -52.82)" opacity="0.1"/><path d="M612.58,591.06s2.34,13.2-6.37,17.87C606.21,608.93,611.15,602.38,612.58,591.06Z" transform="translate(-69 -52.82)" opacity="0.1"/><path d="M555.57,609.29s21-3.59,25.14-.81S555.57,609.29,555.57,609.29Z" transform="translate(-69 -52.82)" opacity="0.1"/><path d="M605.31,527.5s-3.23,13.29-.81,16.34S605.31,527.5,605.31,527.5Z" transform="translate(-69 -52.82)" opacity="0.1"/><path d="M544.44,516.64s3,4.93,1.17,10.05S544.44,516.64,544.44,516.64Z" transform="translate(-69 -52.82)" opacity="0.1"/><path d="M538.34,559.91s3.77,2.25,2.51,5.75S538.34,559.91,538.34,559.91Z" transform="translate(-69 -52.82)" fill="#00cccc"/><path d="M538,549.68s3.5,1.88,3.95,4.66S538,549.68,538,549.68Z" transform="translate(-69 -52.82)" opacity="0.1"/><path d="M589.87,657.05s22,2.25,26.39-3C616.26,654.09,596.42,658,589.87,657.05Z" transform="translate(-69 -52.82)" opacity="0.1"/><path d="M551.89,655.79s23.61,5.57,28.28,1.17C580.17,657,559.88,658.49,551.89,655.79Z" transform="translate(-69 -52.82)" opacity="0.1"/><path d="M591.57,664.32s9.88,0,14.46.27S591.57,664.32,591.57,664.32Z" transform="translate(-69 -52.82)" opacity="0.1"/><path d="M553.51,668.54s4.85,5.48,10.32,4.49S553.51,668.54,553.51,668.54Z" transform="translate(-69 -52.82)" opacity="0.1"/><path d="M563,444.26c-1.52,2.36-1.57,5.09-2,7.71a32.14,32.14,0,0,1-8.62,17c-4.3,4.58-10.21,8.73-11.33,14.32-1.05,5.31,2.53,10.42,4.41,15.59,5,13.63-2,27.93-4,42-.56,3.89.11,8.86,4.9,10.15,1.5.4,3.21.35,4.56,1,1.8.86,2.35,2.66,2.68,4.27a65.47,65.47,0,0,1,1.24,17.59c-.22,3.31-.46,7.11,2.66,9.39a16.1,16.1,0,0,0,5.18,2.06c4.92,1.33,11.28,2.38,14.6-.72,1.39-1.3,1.91-3.14,3.65-4.17,2.6-1.54,6.29-.5,9.56-.34a17.33,17.33,0,0,0,15.55-8.35c2.65-4.78,2.42-10.2,1.44-15.34s-2.68-10.22-2.8-15.42a8.91,8.91,0,0,1,1.16-5.22c2-3.1,6.65-4.51,9.84-6.94,6-4.56,5.94-12,3.78-18.3s-6.07-12.24-6.55-18.71a7.17,7.17,0,0,1,.88-4.52A18.18,18.18,0,0,1,617.5,484c8.71-7.35,7.68-19.43.48-27.69C610,447.11,573.9,427.38,563,444.26Z" transform="translate(-69 -52.82)" fill="#e3787d"/><g opacity="0.1"><path d="M546.63,504.62a34.17,34.17,0,0,0-1.38-16.19c-.94-2.61-2.32-5.2-3.33-7.81a11.65,11.65,0,0,0-1.08,3c-1.05,5.31,2.53,10.42,4.41,15.59A28,28,0,0,1,546.63,504.62Z" transform="translate(-69 -52.82)"/><path d="M554.65,563.44a65.47,65.47,0,0,0-1.24-17.59c-.33-1.61-.88-3.41-2.68-4.27-1.35-.65-3.06-.6-4.56-1a6.26,6.26,0,0,1-4.19-3.47c-.27,1.36-.51,2.73-.71,4.09-.56,3.89.11,8.86,4.9,10.15,1.5.4,3.21.35,4.56,1,1.8.87,2.35,2.66,2.68,4.28a65.86,65.86,0,0,1,1.16,8.12C554.59,564.31,554.62,563.87,554.65,563.44Z" transform="translate(-69 -52.82)"/><path d="M605.85,561.31a17.32,17.32,0,0,1-15.55,8.35c-3.27-.16-7-1.2-9.56.34-1.73,1-2.26,2.87-3.65,4.17-3.32,3.1-9.68,2.05-14.6.72a15.75,15.75,0,0,1-5.17-2.07,6.52,6.52,0,0,1-2.56-4.14c0,1.84,0,3.69-.11,5.53-.22,3.31-.46,7.11,2.67,9.39a16,16,0,0,0,5.17,2.06c4.92,1.33,11.28,2.38,14.6-.71,1.39-1.31,1.92-3.15,3.65-4.18,2.6-1.54,6.29-.5,9.56-.34a17.32,17.32,0,0,0,15.55-8.35c2.55-4.59,2.44-9.78,1.55-14.74A16.27,16.27,0,0,1,605.85,561.31Z" transform="translate(-69 -52.82)"/><path d="M617.23,473.47a17.62,17.62,0,0,0-3.63,3.39,7.17,7.17,0,0,0-.88,4.52,24.18,24.18,0,0,0,1.24,5.77,23.63,23.63,0,0,1,3.27-2.91c5.89-5,7.32-12.1,5.41-18.75A17.18,17.18,0,0,1,617.23,473.47Z" transform="translate(-69 -52.82)"/><path d="M615.49,518.39c-3.19,2.43-7.84,3.84-9.84,6.93a9,9,0,0,0-1.16,5.23,36.69,36.69,0,0,0,.77,6.25,4.8,4.8,0,0,1,.39-.7c2-3.1,6.65-4.51,9.84-6.94,5.44-4.17,5.9-10.76,4.29-16.64A12.64,12.64,0,0,1,615.49,518.39Z" transform="translate(-69 -52.82)"/></g><path d="M656.49,520.59c-3.68,9.34-8.45,13-8.45,13l-2.65,0-23.29.24-2.69-7.36,3.77-15.89,2.33.09a13.44,13.44,0,0,0,4.49,1.44c1.71,0,5-.09,6,.36a.83.83,0,0,0,.44.06c.88-.09,1.8-1.41,1.8-1.41S660.16,511.25,656.49,520.59Z" transform="translate(-69 -52.82)" fill="#00cccc"/><path d="M656.49,520.59c-3.68,9.34-8.45,13-8.45,13l-2.65,0c1.39-3.7,4.3-11.29,5.44-13s-8.67-5.79-14.37-8c.88-.09,1.8-1.41,1.8-1.41S660.16,511.25,656.49,520.59Z" transform="translate(-69 -52.82)" opacity="0.1"/></svg>
+					</div>
+
+				</div>
+			</div>
+			<!-- Container closed -->
+
+			<!-- Footer opened -->
+        		<div class="main-footer ht-40">
+      				<div class="container-fluid pd-t-0-f ht-100p">
+      					<span>Copyright © 2021. Awesome Coding Tutorials - provided with &hearts; by Herr B&auml;r. All rights reserved.</span>
+      				</div>
+      			</div>			<!-- Footer closed -->
+
+		</div>
+		<!-- End Page -->
+
+		<!-- Back-to-top -->
+		<a href="#top" id="back-to-top"><i class="las la-angle-double-up"></i></a>
+
+		<!-- JQuery min js -->
+		<script src="assets/plugins/jquery/jquery.min.js"></script>
+
+		<!-- Bootstrap Bundle js -->
+		<script src="assets/plugins/bootstrap/js/popper.min.js"></script>
+		<script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+		<!-- Ionicons js -->
+		<script src="assets/plugins/ionicons/ionicons.js"></script>
+
+		<!-- Moment js -->
+		<script src="assets/plugins/moment/moment.js"></script>
+
+		<!--Internal Sparkline js -->
+		<script src="assets/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
+
+		<!-- Moment js -->
+		<script src="assets/plugins/raphael/raphael.min.js"></script>
+
+		<!-- Internal Piety js -->
+		<script src="assets/plugins/peity/jquery.peity.min.js"></script>
+
+		<!-- Rating js-->
+		<script src="assets/plugins/rating/jquery.rating-stars.js"></script>
+		<script src="assets/plugins/rating/jquery.barrating.js"></script>
+
+		<!-- P-scroll js -->
+		<script src="assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+		<script src="assets/plugins/perfect-scrollbar/p-scroll.js"></script>
+
+		<!-- Sidemenu js-->
+		<script src="assets/plugins/sidebar/sidebar.js"></script>
+		<script src="assets/plugins/sidebar/sidebar-custom.js"></script>
+
+		<!-- Eva-icons js -->
+		<script src="assets/js/eva-icons.min.js"></script>
+
+		<!--Internal Apexchart js-->
+		<script src="assets/js/apexcharts.js"></script>
+
+		<!-- Horizontalmenu js-->
+		<script src="assets/plugins/horizontal-menu/horizontal-menu-2/horizontal-menu.js"></script>
+
+		<!-- Sticky js -->
+		<script src="assets/js/sticky.js"></script>
+
+		<!-- Internal Map -->
+		<script src="assets/plugins/jqvmap/jquery.vmap.min.js"></script>
+		<script src="assets/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+
+		<!-- Internal Chart js -->
+		<script src="assets/plugins/chart.js/Chart.bundle.min.js"></script>
+
+		<!--Internal  index js -->
+		<script src="assets/js/index.js"></script>
+		<script src="assets/js/jquery.vmap.sampledata.js"></script>
+
+		<!-- custom js -->
+		<script src="assets/js/custom.js"></script>
+		<script src="assets/js/jquery.vmap.sampledata.js"></script>
+
+	</body>
+</html>
